@@ -579,6 +579,57 @@
     max-width: var(--measure);
   }
 
+  /* ---------- figures ---------- */
+
+  figure {
+    margin: 0 0 1.75rem;
+  }
+
+  .fig-frame {
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    padding: 1.125rem 1.125rem 0.875rem;
+  }
+
+  .fig {
+    display: block;
+    width: 100%;
+    height: auto;
+    font-family: var(--font-body);
+  }
+
+  .fig text { font-family: var(--font-body); }
+  .fig .t-lbl { font-size: 11px; font-weight: 700; fill: var(--ink); }
+  .fig .t-sm { font-size: 9.5px; fill: var(--ink-3); }
+  .fig .t-tag { font-size: 9px; font-weight: 700; fill: #FFFFFF; letter-spacing: 0.04em; }
+  .fig .frame { fill: none; stroke: var(--rule-hard); stroke-width: 1.5; }
+  .fig .guide { stroke: var(--ink-3); stroke-width: 1; fill: none; }
+  .fig .dash { stroke: var(--ink-3); stroke-width: 1; stroke-dasharray: 4 3; fill: none; }
+
+  figcaption {
+    font-size: 0.8125rem;
+    color: var(--ink-3);
+    line-height: 1.85;
+    margin-top: 0.75rem;
+    max-width: var(--measure);
+  }
+
+  figcaption b {
+    color: var(--ink-2);
+    font-weight: 700;
+  }
+
+  .fig-note {
+    font-size: 0.75rem;
+    color: var(--ink-3);
+    letter-spacing: 0.04em;
+    margin: 0 0 2rem;
+    padding: 0.625rem 0.875rem;
+    border: 1px dashed var(--rule-hard);
+    max-width: var(--measure);
+    line-height: 1.8;
+  }
+
   /* ---------- responsive ---------- */
 
   @media (max-width: 40rem) {
@@ -615,6 +666,106 @@
     .masthead { padding-top: 0; }
   }
 </style>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+
+    <!-- 引き：花束全体 -->
+    <symbol id="ph-bouquet" viewBox="0 0 120 120" preserveAspectRatio="xMidYMid slice">
+      <rect width="120" height="120" fill="#E8E4DB"/>
+      <rect y="94" width="120" height="26" fill="#D6CFC1"/>
+      <ellipse cx="60" cy="106" rx="30" ry="5" fill="#C6BEAE"/>
+      <path d="M42 68 L78 68 L68 106 L52 106 Z" fill="#CFC7B6"/>
+      <path d="M42 68 L60 76 L78 68 L60 61 Z" fill="#DFD8C9"/>
+      <g stroke="#5E7A52" stroke-width="2.4" stroke-linecap="round" fill="none">
+        <path d="M56 74 L50 52"/><path d="M60 74 L60 46"/><path d="M64 74 L71 54"/>
+      </g>
+      <ellipse cx="41" cy="62" rx="11" ry="4.6" fill="#6E8C5E" transform="rotate(-25 41 62)"/>
+      <ellipse cx="80" cy="64" rx="11" ry="4.6" fill="#6E8C5E" transform="rotate(22 80 64)"/>
+      <circle cx="45" cy="46" r="10" fill="#C0483E"/><circle cx="45" cy="46" r="3.4" fill="#96322C"/>
+      <circle cx="60" cy="35" r="12" fill="#CB5348"/><circle cx="60" cy="35" r="4" fill="#96322C"/>
+      <circle cx="76" cy="47" r="9" fill="#D98CA0"/><circle cx="76" cy="47" r="3" fill="#BB6A7E"/>
+      <circle cx="52" cy="59" r="7.5" fill="#E0B451"/><circle cx="52" cy="59" r="2.6" fill="#BE8F32"/>
+      <circle cx="69" cy="60" r="6.5" fill="#F4F0E7"/><circle cx="69" cy="60" r="2.3" fill="#D5CCB8"/>
+    </symbol>
+
+    <!-- 寄り：花芯のクローズアップ -->
+    <symbol id="ph-bloom" viewBox="0 0 120 120" preserveAspectRatio="xMidYMid slice">
+      <rect width="120" height="120" fill="#E8E4DB"/>
+      <g transform="translate(60,60)">
+        <g fill="#B94239">
+          <ellipse rx="18" ry="31" cy="-23"/>
+          <ellipse rx="18" ry="31" cy="-23" transform="rotate(60)"/>
+          <ellipse rx="18" ry="31" cy="-23" transform="rotate(120)"/>
+          <ellipse rx="18" ry="31" cy="-23" transform="rotate(180)"/>
+          <ellipse rx="18" ry="31" cy="-23" transform="rotate(240)"/>
+          <ellipse rx="18" ry="31" cy="-23" transform="rotate(300)"/>
+        </g>
+        <g fill="#CB5348">
+          <ellipse rx="12" ry="21" cy="-15" transform="rotate(30)"/>
+          <ellipse rx="12" ry="21" cy="-15" transform="rotate(90)"/>
+          <ellipse rx="12" ry="21" cy="-15" transform="rotate(150)"/>
+          <ellipse rx="12" ry="21" cy="-15" transform="rotate(210)"/>
+          <ellipse rx="12" ry="21" cy="-15" transform="rotate(270)"/>
+          <ellipse rx="12" ry="21" cy="-15" transform="rotate(330)"/>
+        </g>
+        <circle r="9.5" fill="#8B2E28"/>
+        <circle r="4" fill="#E0B451"/>
+      </g>
+    </symbol>
+
+    <!-- 使用シーン：玄関に飾った状態 -->
+    <symbol id="ph-vase" viewBox="0 0 120 120" preserveAspectRatio="xMidYMid slice">
+      <rect width="120" height="120" fill="#E8E4DB"/>
+      <rect x="4" y="6" width="34" height="76" fill="#DCD6CA"/>
+      <rect x="4" y="6" width="34" height="76" fill="none" stroke="#CBC3B4" stroke-width="1.5"/>
+      <circle cx="33" cy="46" r="2" fill="#B6AC99"/>
+      <rect y="82" width="120" height="38" fill="#CFC7B7"/>
+      <rect y="80" width="120" height="3" fill="#B9AF9C"/>
+      <ellipse cx="66" cy="97" rx="20" ry="4" fill="#BBB1A0"/>
+      <path d="M56 62 L78 62 L74 96 L60 96 Z" fill="#AEBCBE"/>
+      <path d="M56 62 L78 62 L77 68 L57 68 Z" fill="#C4D0D2"/>
+      <g stroke="#5E7A52" stroke-width="2.2" stroke-linecap="round" fill="none">
+        <path d="M64 64 L58 42"/><path d="M67 64 L68 38"/><path d="M70 64 L78 46"/>
+      </g>
+      <ellipse cx="54" cy="52" rx="9" ry="4" fill="#6E8C5E" transform="rotate(-25 54 52)"/>
+      <circle cx="56" cy="38" r="8.5" fill="#C0483E"/><circle cx="56" cy="38" r="3" fill="#96322C"/>
+      <circle cx="68" cy="30" r="10" fill="#CB5348"/><circle cx="68" cy="30" r="3.4" fill="#96322C"/>
+      <circle cx="80" cy="42" r="7.5" fill="#D98CA0"/><circle cx="80" cy="42" r="2.6" fill="#BB6A7E"/>
+      <circle cx="62" cy="50" r="6" fill="#E0B451"/><circle cx="62" cy="50" r="2.2" fill="#BE8F32"/>
+    </symbol>
+
+    <!-- ブランディング：作業台の手元 -->
+    <symbol id="ph-hands" viewBox="0 0 120 120" preserveAspectRatio="xMidYMid slice">
+      <rect width="120" height="120" fill="#DED8CC"/>
+      <rect y="48" width="120" height="72" fill="#9C7F5E"/>
+      <g stroke="#8A6F51" stroke-width="1.6" fill="none">
+        <path d="M0 66 H120"/><path d="M0 88 H120"/><path d="M0 108 H120"/>
+      </g>
+      <g stroke="#5E7A52" stroke-width="2.8" stroke-linecap="round" fill="none">
+        <path d="M28 94 L66 56"/><path d="M36 99 L74 60"/><path d="M44 103 L80 66"/>
+      </g>
+      <ellipse cx="55" cy="76" rx="9" ry="4" fill="#6E8C5E" transform="rotate(-42 55 76)"/>
+      <circle cx="68" cy="52" r="9" fill="#C0483E"/><circle cx="68" cy="52" r="3" fill="#96322C"/>
+      <circle cx="79" cy="58" r="7" fill="#E0B451"/>
+      <circle cx="85" cy="67" r="6" fill="#F4F0E7"/>
+      <g transform="translate(36,97) rotate(-40)">
+        <rect x="-27" y="-10" width="15" height="20" rx="5" fill="#4E5A68"/>
+        <rect x="-16" y="-12" width="30" height="24" rx="12" fill="#EDCBAB"/>
+        <rect x="4" y="-13" width="21" height="7.5" rx="3.7" fill="#F0D2B4"/>
+        <rect x="6" y="-4.5" width="23" height="7.5" rx="3.7" fill="#EDCBAB"/>
+        <rect x="5" y="4" width="20" height="7.5" rx="3.7" fill="#E7C2A0"/>
+        <rect x="-10" y="9" width="17" height="7.5" rx="3.7" fill="#E2BB99"/>
+      </g>
+      <g transform="translate(97,103) rotate(-20)">
+        <rect x="-15" y="-2" width="31" height="4" rx="2" fill="#7B7F82"/>
+        <circle cx="-18" cy="-5.5" r="5" fill="none" stroke="#5E6367" stroke-width="2.4"/>
+        <circle cx="-18" cy="6.5" r="5" fill="none" stroke="#5E6367" stroke-width="2.4"/>
+      </g>
+    </symbol>
+
+  </defs>
+</svg>
 
 <div class="shell">
 
@@ -788,6 +939,64 @@
         <li>フラッシュは使わない。花びらのつやが飛んで造花のように写ります。</li>
       </ul>
 
+      <p class="fig-note">※ 以下の図はすべて、構図と手順を示すための作図です。実物の写真ではありません。この配置をそのまま真似して撮ってください。</p>
+
+      <figure>
+        <div class="fig-frame">
+          <svg class="fig" viewBox="0 0 480 215" role="img" aria-label="窓・花・レフ板・スマホの位置関係を上から見た図">
+            <defs>
+              <marker id="arLight" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                <path d="M0 0 L10 5 L0 10 Z" fill="#C8992F"/>
+              </marker>
+              <marker id="arGrey" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                <path d="M0 0 L10 5 L0 10 Z" fill="#8A928A"/>
+              </marker>
+            </defs>
+
+            <rect x="14" y="14" width="452" height="187" fill="var(--surface-2)" stroke="var(--rule)" stroke-width="1"/>
+
+            <!-- 窓 -->
+            <rect x="30" y="52" width="10" height="112" fill="#AEBCBE" stroke="#8A9A9C" stroke-width="1"/>
+            <g stroke="#F4F0E7" stroke-width="1.4" opacity="0.9">
+              <path d="M32 62 H38"/><path d="M32 78 H38"/><path d="M32 94 H38"/>
+              <path d="M32 110 H38"/><path d="M32 126 H38"/><path d="M32 142 H38"/><path d="M32 156 H38"/>
+            </g>
+            <text class="t-lbl" x="24" y="42">窓（北向き／レース越し）</text>
+
+            <!-- 光 -->
+            <g stroke="#C8992F" stroke-width="1.8" marker-end="url(#arLight)" fill="none">
+              <path d="M48 76 H146"/>
+              <path d="M48 108 H146"/>
+              <path d="M48 140 H146"/>
+            </g>
+            <text class="t-sm" x="60" y="70" fill="#B0872A">やわらかい光</text>
+
+            <!-- 主役 -->
+            <use href="#ph-bouquet" x="156" y="76" width="66" height="66"/>
+            <rect class="frame" x="156" y="76" width="66" height="66"/>
+            <text class="t-lbl" x="189" y="70" text-anchor="middle">花（主役）</text>
+
+            <!-- レフ板 -->
+            <g transform="rotate(-14 306 109)">
+              <rect x="300" y="64" width="11" height="90" fill="#F7F4EC" stroke="#B9AF9C" stroke-width="1.2"/>
+            </g>
+            <text class="t-lbl" x="326" y="98">白い紙（レフ板）</text>
+            <text class="t-sm" x="326" y="114">影が濃くなりすぎるのを防ぐ</text>
+            <text class="t-sm" x="326" y="129">画用紙・発泡スチロールで可</text>
+            <path class="dash" d="M292 109 H238" marker-end="url(#arGrey)"/>
+
+            <!-- スマホ -->
+            <rect x="171" y="168" width="36" height="26" rx="4" fill="#3B423C"/>
+            <circle cx="189" cy="181" r="5.5" fill="#8FB4DA"/>
+            <circle cx="189" cy="181" r="2.4" fill="#26303A"/>
+            <path class="guide" d="M189 166 V150" marker-end="url(#arGrey)" stroke="#8A928A"/>
+            <text class="t-lbl" x="216" y="180">スマホ</text>
+            <text class="t-sm" x="216" y="193">花の正面・やや上から</text>
+          </svg>
+        </div>
+        <figcaption><b>図1｜光の作り方（上から見た配置）</b><br>光は<b>横から</b>当てます。窓を花の真横に置き、反対側に白い紙を立てるだけで、花びらの立体感が出ます。カメラは光と向かい合わないこと。逆光になると花が黒くつぶれます。</figcaption>
+      </figure>
+
       <h3>背景｜「撮影の定位置」を3か所つくる</h3>
       <p>
         毎回背景が違うと、プロフィールを開いたときにバラバラに見えます。店の中に<strong>撮る場所を3つだけ決めて固定</strong>します。
@@ -797,6 +1006,38 @@
         <li><strong>定位置B（ブランディング用）</strong>：古い木の作業台。91年の店の空気が写ります。</li>
         <li><strong>定位置C（説明写真用）</strong>：実際の玄関・仏壇まわりに近い場所。サイズ感が伝わります。</li>
       </ul>
+
+      <figure>
+        <div class="fig-frame">
+          <svg class="fig" viewBox="0 0 480 198" role="img" aria-label="撮影の定位置3か所（白背景・木の作業台・玄関まわり）">
+            <g>
+              <use href="#ph-bouquet" x="10" y="6" width="140" height="140"/>
+              <rect class="frame" x="10" y="6" width="140" height="140"/>
+              <rect x="10" y="6" width="30" height="20" fill="#1B3A5C"/>
+              <text class="t-tag" x="25" y="20" text-anchor="middle">A</text>
+              <text class="t-lbl" x="80" y="166" text-anchor="middle">白い壁・白い紙</text>
+              <text class="t-sm" x="80" y="182" text-anchor="middle">商品写真／花の色が正確に出る</text>
+            </g>
+            <g>
+              <use href="#ph-hands" x="170" y="6" width="140" height="140"/>
+              <rect class="frame" x="170" y="6" width="140" height="140"/>
+              <rect x="170" y="6" width="30" height="20" fill="#3F6248"/>
+              <text class="t-tag" x="185" y="20" text-anchor="middle">B</text>
+              <text class="t-lbl" x="240" y="166" text-anchor="middle">古い木の作業台</text>
+              <text class="t-sm" x="240" y="182" text-anchor="middle">ブランディング／91年の店の空気</text>
+            </g>
+            <g>
+              <use href="#ph-vase" x="330" y="6" width="140" height="140"/>
+              <rect class="frame" x="330" y="6" width="140" height="140"/>
+              <rect x="330" y="6" width="30" height="20" fill="#A8322C"/>
+              <text class="t-tag" x="345" y="20" text-anchor="middle">C</text>
+              <text class="t-lbl" x="400" y="166" text-anchor="middle">玄関・仏壇まわり</text>
+              <text class="t-sm" x="400" y="182" text-anchor="middle">説明写真／サイズ感が伝わる</text>
+            </g>
+          </svg>
+        </div>
+        <figcaption><b>図2｜撮影の定位置3か所</b><br>この3か所を店内に決めて、動かさないでください。毎回同じ場所で撮ると、プロフィールを開いたときに<b>写真が揃って見えます</b>。揃って見えることが、そのまま店の信頼感になります。</figcaption>
+      </figure>
 
       <h3>構図｜3枚セットで撮るのを習慣に</h3>
       <div class="scroller">
@@ -812,6 +1053,38 @@
         </table>
       </div>
 
+      <figure>
+        <div class="fig-frame">
+          <svg class="fig" viewBox="0 0 480 208" role="img" aria-label="寄り・引き・使用シーンの3カット">
+            <g>
+              <use href="#ph-bloom" x="30" y="8" width="120" height="150"/>
+              <rect class="frame" x="30" y="8" width="120" height="150"/>
+              <circle cx="47" cy="25" r="11" fill="#1B3A5C"/>
+              <text class="t-tag" x="47" y="29" text-anchor="middle">1</text>
+              <text class="t-lbl" x="90" y="178" text-anchor="middle">寄り</text>
+              <text class="t-sm" x="90" y="194" text-anchor="middle">花芯・花びらの重なり</text>
+            </g>
+            <g>
+              <use href="#ph-bouquet" x="180" y="8" width="120" height="150"/>
+              <rect class="frame" x="180" y="8" width="120" height="150"/>
+              <circle cx="197" cy="25" r="11" fill="#1B3A5C"/>
+              <text class="t-tag" x="197" y="29" text-anchor="middle">2</text>
+              <text class="t-lbl" x="240" y="178" text-anchor="middle">引き</text>
+              <text class="t-sm" x="240" y="194" text-anchor="middle">全体を真正面から</text>
+            </g>
+            <g>
+              <use href="#ph-vase" x="330" y="8" width="120" height="150"/>
+              <rect class="frame" x="330" y="8" width="120" height="150"/>
+              <circle cx="347" cy="25" r="11" fill="#1B3A5C"/>
+              <text class="t-tag" x="347" y="29" text-anchor="middle">3</text>
+              <text class="t-lbl" x="390" y="178" text-anchor="middle">使用シーン</text>
+              <text class="t-sm" x="390" y="194" text-anchor="middle">玄関に飾った状態</text>
+            </g>
+          </svg>
+        </div>
+        <figcaption><b>図3｜1つの商品につき、必ずこの3枚</b><br>①で手を止めさせ、②で商品を正確に伝え、③で「わが家に置いたら」を想像させます。この3枚が揃うと、1回の作業から<b>1投稿分の素材</b>ができあがります。</figcaption>
+      </figure>
+
       <h4>細かいが効くこと</h4>
       <ul>
         <li><strong>縦4:5で撮る。</strong>正方形よりフィードの占有面積が広く、目に留まりやすい。リールは9:16。</li>
@@ -820,6 +1093,43 @@
         <li><strong>主役をひとつに絞り、余白をつくる。</strong>全部入れようとすると何も伝わりません。</li>
         <li><strong>渡す前に必ず30秒撮る。</strong>お届け・お渡し前が唯一の撮影チャンスです。</li>
       </ul>
+
+      <figure>
+        <div class="fig-frame">
+          <svg class="fig" viewBox="0 0 480 245" role="img" aria-label="1対1・4対5・9対16の画面占有面積の比較">
+            <defs>
+              <clipPath id="clipReel"><rect x="334" y="12" width="102" height="202" rx="10"/></clipPath>
+            </defs>
+
+            <!-- 1:1 -->
+            <rect x="40" y="8" width="110" height="210" rx="13" fill="var(--surface-2)" stroke="var(--rule-hard)" stroke-width="1.5"/>
+            <rect x="66" y="16" width="58" height="4" rx="2" fill="var(--rule-hard)"/>
+            <use href="#ph-bouquet" x="46" y="64" width="98" height="98"/>
+            <rect class="frame" x="46" y="64" width="98" height="98"/>
+            <text class="t-lbl" x="95" y="236" text-anchor="middle">1:1　正方形</text>
+
+            <!-- 4:5 -->
+            <rect x="185" y="8" width="110" height="210" rx="13" fill="var(--surface-2)" stroke="#1B3A5C" stroke-width="2.5"/>
+            <rect x="211" y="16" width="58" height="4" rx="2" fill="var(--rule-hard)"/>
+            <use href="#ph-bouquet" x="191" y="52" width="98" height="122"/>
+            <rect class="frame" x="191" y="52" width="98" height="122"/>
+            <rect x="185" y="186" width="110" height="20" fill="#1B3A5C"/>
+            <text class="t-tag" x="240" y="200" text-anchor="middle">推奨　面積1.25倍</text>
+            <text class="t-lbl" x="240" y="236" text-anchor="middle">4:5　縦</text>
+
+            <!-- 9:16 -->
+            <rect x="330" y="8" width="110" height="210" rx="13" fill="var(--surface-2)" stroke="var(--rule-hard)" stroke-width="1.5"/>
+            <g clip-path="url(#clipReel)">
+              <use href="#ph-hands" x="334" y="12" width="102" height="202"/>
+            </g>
+            <rect x="334" y="12" width="102" height="202" rx="10" fill="none" stroke="var(--rule-hard)" stroke-width="1"/>
+            <circle cx="420" cy="180" r="9" fill="#FFFFFF" opacity="0.85"/>
+            <path d="M416.5 175.5 L425 180 L416.5 184.5 Z" fill="#3B423C"/>
+            <text class="t-lbl" x="385" y="236" text-anchor="middle">9:16　リール</text>
+          </svg>
+        </div>
+        <figcaption><b>図4｜縦で撮るだけで、見られる面積が変わる</b><br>同じ写真でも、4:5の縦にすると画面に占める面積が約1.25倍になります。指を止めてもらえる時間が長くなるぶん、そのまま反応の差になります。<b>スマホのカメラ設定を4:5に変えて固定</b>してください。リール（動画）は9:16の全画面です。</figcaption>
+      </figure>
 
       <div class="dd">
         <div class="do">
@@ -843,6 +1153,97 @@
           </ul>
         </div>
       </div>
+
+      <figure>
+        <div class="fig-frame">
+          <svg class="fig" viewBox="0 0 480 242" role="img" aria-label="良い構図と悪い構図の比較">
+            <defs>
+              <clipPath id="clipOK"><rect x="45" y="8" width="150" height="188"/></clipPath>
+              <clipPath id="clipNG"><rect x="285" y="8" width="150" height="188"/></clipPath>
+            </defs>
+
+            <!-- OK -->
+            <g clip-path="url(#clipOK)">
+              <rect x="45" y="8" width="150" height="188" fill="#E8E4DB"/>
+              <use href="#ph-bouquet" x="64" y="18" width="162" height="162"/>
+              <g stroke="#FFFFFF" stroke-width="1" opacity="0.55">
+                <path d="M95 8 V196"/><path d="M145 8 V196"/>
+                <path d="M45 71 H195"/><path d="M45 133 H195"/>
+              </g>
+            </g>
+            <rect class="frame" x="45" y="8" width="150" height="188"/>
+            <circle cx="145" cy="71" r="6" fill="none" stroke="#FFFFFF" stroke-width="2"/>
+            <g stroke="#1B3A5C" stroke-width="1.4" fill="none">
+              <path d="M172 14 V46"/>
+              <path d="M167 14 H177"/><path d="M167 46 H177"/>
+            </g>
+            <text class="t-sm" x="163" y="33" text-anchor="end" fill="#1B3A5C">余白</text>
+            <rect x="45" y="8" width="32" height="18" fill="#3F6248"/>
+            <text class="t-tag" x="61" y="21" text-anchor="middle">OK</text>
+            <text class="t-lbl" x="120" y="216" text-anchor="middle">主役ひとつ ＋ 余白</text>
+            <text class="t-sm" x="120" y="232" text-anchor="middle">線の交点に主役を置くと落ち着く</text>
+
+            <!-- NG -->
+            <g clip-path="url(#clipNG)">
+              <use href="#ph-bouquet" x="285" y="8" width="188" height="188"/>
+              <rect x="289" y="12" width="52" height="42" fill="#B98F5E"/>
+              <path d="M289 26 H341 M315 12 V26" stroke="#9A7548" stroke-width="1.6" fill="none"/>
+              <rect x="392" y="16" width="46" height="36" fill="#C79C68"/>
+              <path d="M392 30 H438" stroke="#A98253" stroke-width="1.6"/>
+              <rect x="289" y="146" width="40" height="50" rx="3" fill="#4E7EA8"/>
+              <rect x="286" y="142" width="46" height="8" rx="3" fill="#3F6B92"/>
+              <rect x="396" y="160" width="42" height="36" rx="2" fill="#8E8E8A"/>
+              <path d="M400 160 L438 172" stroke="#75756F" stroke-width="1.6"/>
+            </g>
+            <rect class="frame" x="285" y="8" width="150" height="188"/>
+            <rect x="285" y="8" width="32" height="18" fill="#A8322C"/>
+            <text class="t-tag" x="301" y="21" text-anchor="middle">NG</text>
+            <text class="t-lbl" x="360" y="216" text-anchor="middle">背景に段ボール・私物</text>
+            <text class="t-sm" x="360" y="232" text-anchor="middle">主役が埋もれ、店の印象まで下がる</text>
+          </svg>
+        </div>
+        <figcaption><b>図5｜同じ花束でも、背景と余白で別物になる</b><br>右は花そのものは同じです。<b>背景に写り込んだ段ボールとバケツ</b>だけで、「忙しそうな店」「雑な店」という印象に変わってしまいます。撮る前に、画面の四隅を見る癖をつけてください。</figcaption>
+      </figure>
+
+      <figure>
+        <div class="fig-frame">
+          <svg class="fig" viewBox="0 0 480 152" role="img" aria-label="適正・白飛び・彩度過多・色かぶりの比較">
+            <g>
+              <use href="#ph-bouquet" x="8" y="6" width="104" height="104"/>
+              <rect class="frame" x="8" y="6" width="104" height="104"/>
+              <rect x="8" y="6" width="30" height="17" fill="#3F6248"/>
+              <text class="t-tag" x="23" y="18.5" text-anchor="middle">OK</text>
+              <text class="t-lbl" x="60" y="128" text-anchor="middle">適正</text>
+              <text class="t-sm" x="60" y="143" text-anchor="middle">窓の光・加工は最小限</text>
+            </g>
+            <g>
+              <use href="#ph-bouquet" x="128" y="6" width="104" height="104" style="filter:brightness(1.75) contrast(0.72)"/>
+              <rect class="frame" x="128" y="6" width="104" height="104"/>
+              <rect x="128" y="6" width="30" height="17" fill="#A8322C"/>
+              <text class="t-tag" x="143" y="18.5" text-anchor="middle">NG</text>
+              <text class="t-lbl" x="180" y="128" text-anchor="middle">白飛び</text>
+              <text class="t-sm" x="180" y="143" text-anchor="middle">直射日光・フラッシュ</text>
+            </g>
+            <g>
+              <use href="#ph-bouquet" x="248" y="6" width="104" height="104" style="filter:saturate(3.4)"/>
+              <rect class="frame" x="248" y="6" width="104" height="104"/>
+              <rect x="248" y="6" width="30" height="17" fill="#A8322C"/>
+              <text class="t-tag" x="263" y="18.5" text-anchor="middle">NG</text>
+              <text class="t-lbl" x="300" y="128" text-anchor="middle">彩度の上げすぎ</text>
+              <text class="t-sm" x="300" y="143" text-anchor="middle">実物と違う＝クレーム</text>
+            </g>
+            <g>
+              <use href="#ph-bouquet" x="368" y="6" width="104" height="104" style="filter:sepia(0.55) hue-rotate(18deg) saturate(1.4)"/>
+              <rect class="frame" x="368" y="6" width="104" height="104"/>
+              <rect x="368" y="6" width="30" height="17" fill="#A8322C"/>
+              <text class="t-tag" x="383" y="18.5" text-anchor="middle">NG</text>
+              <text class="t-lbl" x="420" y="128" text-anchor="middle">色かぶり</text>
+              <text class="t-sm" x="420" y="143" text-anchor="middle">蛍光灯と外光が混ざった</text>
+            </g>
+          </svg>
+        </div>
+        <figcaption><b>図6｜この3つが、花屋でいちばん多い失敗</b><br>とくに右端の<b>色かぶり</b>は気づきにくい失敗です。撮るときに近くの照明を消すだけで防げます。白い花を撮って白く写らなければ、色かぶりを疑ってください。</figcaption>
+      </figure>
 
       <h4>撮影前チェックリスト（印刷して作業台に貼る）</h4>
       <ul class="check">
@@ -881,6 +1282,67 @@
           </tbody>
         </table>
       </div>
+
+      <figure>
+        <div class="fig-frame">
+          <svg class="fig" viewBox="0 0 480 158" role="img" aria-label="カルーセル5枚の並べ方">
+            <defs>
+              <clipPath id="clipC1"><rect x="17" y="14" width="78" height="98"/></clipPath>
+            </defs>
+
+            <!-- 1 共感 -->
+            <g clip-path="url(#clipC1)">
+              <use href="#ph-bloom" x="17" y="14" width="78" height="98"/>
+              <rect x="17" y="66" width="78" height="46" fill="#1D2622" opacity="0.72"/>
+              <text x="56" y="84" text-anchor="middle" font-size="9.5" font-weight="700" fill="#FFFFFF">祖母に何色を</text>
+              <text x="56" y="98" text-anchor="middle" font-size="9.5" font-weight="700" fill="#FFFFFF">贈ればいい？</text>
+            </g>
+            <rect class="frame" x="17" y="14" width="78" height="98"/>
+            <circle cx="30" cy="27" r="9" fill="#1B3A5C"/><text class="t-tag" x="30" y="30.5" text-anchor="middle">1</text>
+            <text class="t-lbl" x="56" y="130" text-anchor="middle">共感</text>
+            <text class="t-sm" x="56" y="145" text-anchor="middle">心の声を文字で</text>
+
+            <!-- 2 -->
+            <use href="#ph-bouquet" x="109" y="14" width="78" height="98"/>
+            <rect class="frame" x="109" y="14" width="78" height="98"/>
+            <circle cx="122" cy="27" r="9" fill="#1B3A5C"/><text class="t-tag" x="122" y="30.5" text-anchor="middle">2</text>
+            <text class="t-lbl" x="148" y="130" text-anchor="middle">提案</text>
+            <text class="t-sm" x="148" y="145" text-anchor="middle">色の組み合わせ</text>
+
+            <!-- 3 -->
+            <use href="#ph-hands" x="201" y="14" width="78" height="98"/>
+            <rect class="frame" x="201" y="14" width="78" height="98"/>
+            <circle cx="214" cy="27" r="9" fill="#1B3A5C"/><text class="t-tag" x="214" y="30.5" text-anchor="middle">3</text>
+            <text class="t-lbl" x="240" y="130" text-anchor="middle">提案</text>
+            <text class="t-sm" x="240" y="145" text-anchor="middle">手元・仕上がり</text>
+
+            <!-- 4 -->
+            <use href="#ph-vase" x="293" y="14" width="78" height="98"/>
+            <rect class="frame" x="293" y="14" width="78" height="98"/>
+            <circle cx="306" cy="27" r="9" fill="#1B3A5C"/><text class="t-tag" x="306" y="30.5" text-anchor="middle">4</text>
+            <text class="t-lbl" x="332" y="130" text-anchor="middle">説明</text>
+            <text class="t-sm" x="332" y="145" text-anchor="middle">飾った状態・大きさ</text>
+
+            <!-- 5 CTA -->
+            <rect x="385" y="14" width="78" height="98" fill="#E8E4DB"/>
+            <path d="M410 44 h28 v40 l-14 -11 l-14 11 z" fill="#1B3A5C"/>
+            <text x="424" y="98" text-anchor="middle" font-size="9.5" font-weight="700" fill="#3B423C">保存 / ご相談</text>
+            <rect class="frame" x="385" y="14" width="78" height="98"/>
+            <circle cx="398" cy="27" r="9" fill="#A8322C"/><text class="t-tag" x="398" y="30.5" text-anchor="middle">5</text>
+            <text class="t-lbl" x="424" y="130" text-anchor="middle">案内</text>
+            <text class="t-sm" x="424" y="145" text-anchor="middle">行動はひとつだけ</text>
+
+            <!-- chevrons -->
+            <g stroke="var(--ink-3)" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M99 59 l4 4 l-4 4"/>
+              <path d="M191 59 l4 4 l-4 4"/>
+              <path d="M283 59 l4 4 l-4 4"/>
+              <path d="M375 59 l4 4 l-4 4"/>
+            </g>
+          </svg>
+        </div>
+        <figcaption><b>図7｜カルーセル（複数枚投稿）の並べ方</b><br>1枚目に<b>お客様の心の声</b>を文字で置くのが最大のポイントです。「これ、私のことだ」と思った人だけが2枚目をめくり、めくられた投稿はInstagramが「良い投稿」と判断して他の人にも表示します。最後の案内は<b>1つだけ</b>にしてください。</figcaption>
+      </figure>
 
       <h3>キャプションの決まりごと</h3>
       <ul>
@@ -943,6 +1405,64 @@
           </tbody>
         </table>
       </div>
+
+      <figure>
+        <div class="fig-frame">
+          <svg class="fig" viewBox="0 0 480 200" role="img" aria-label="プロフィール9マスの理想的な内訳">
+            <!-- 1行目 -->
+            <use href="#ph-hands" x="14" y="14" width="58" height="58"/>
+            <rect x="14" y="14" width="58" height="5" fill="#1B3A5C"/>
+            <rect class="frame" x="14" y="14" width="58" height="58"/>
+            <use href="#ph-vase" x="76" y="14" width="58" height="58"/>
+            <rect x="76" y="14" width="58" height="5" fill="#3F6248"/>
+            <rect class="frame" x="76" y="14" width="58" height="58"/>
+            <use href="#ph-bouquet" x="138" y="14" width="58" height="58"/>
+            <rect x="138" y="14" width="58" height="5" fill="#A8322C"/>
+            <rect class="frame" x="138" y="14" width="58" height="58"/>
+            <!-- 2行目 -->
+            <use href="#ph-hands" x="14" y="76" width="58" height="58"/>
+            <rect x="14" y="76" width="58" height="5" fill="#1B3A5C"/>
+            <rect class="frame" x="14" y="76" width="58" height="58"/>
+            <use href="#ph-vase" x="76" y="76" width="58" height="58"/>
+            <rect x="76" y="76" width="58" height="5" fill="#3F6248"/>
+            <rect class="frame" x="76" y="76" width="58" height="58"/>
+            <use href="#ph-hands" x="138" y="76" width="58" height="58"/>
+            <rect x="138" y="76" width="58" height="5" fill="#1B3A5C"/>
+            <rect class="frame" x="138" y="76" width="58" height="58"/>
+            <!-- 3行目 -->
+            <use href="#ph-vase" x="14" y="138" width="58" height="58"/>
+            <rect x="14" y="138" width="58" height="5" fill="#3F6248"/>
+            <rect class="frame" x="14" y="138" width="58" height="58"/>
+            <use href="#ph-bouquet" x="76" y="138" width="58" height="58"/>
+            <rect x="76" y="138" width="58" height="5" fill="#A8322C"/>
+            <rect class="frame" x="76" y="138" width="58" height="58"/>
+            <use href="#ph-hands" x="138" y="138" width="58" height="58"/>
+            <rect x="138" y="138" width="58" height="5" fill="#1B3A5C"/>
+            <rect class="frame" x="138" y="138" width="58" height="58"/>
+
+            <!-- 凡例 -->
+            <text class="t-lbl" x="224" y="24">最新9枚の理想的な内訳</text>
+            <g>
+              <rect x="224" y="44" width="14" height="14" fill="#1B3A5C"/>
+              <text class="t-lbl" x="246" y="52">ブランディング写真　4枚</text>
+              <text class="t-sm" x="246" y="67">仕入れ・作業場・季節の店先（認知）</text>
+            </g>
+            <g>
+              <rect x="224" y="90" width="14" height="14" fill="#3F6248"/>
+              <text class="t-lbl" x="246" y="98">説明写真　3枚</text>
+              <text class="t-sm" x="246" y="113">飾り方・サイズ感・長持ちのコツ（興味）</text>
+            </g>
+            <g>
+              <rect x="224" y="136" width="14" height="14" fill="#A8322C"/>
+              <text class="t-lbl" x="246" y="144">商品写真　2枚</text>
+              <text class="t-sm" x="246" y="159">価格帯別・場面別（検討）</text>
+            </g>
+            <path class="dash" d="M224 176 H466"/>
+            <text class="t-sm" x="224" y="192">今は「商品写真」が9枚中7〜8枚。ここを入れ替える。</text>
+          </svg>
+        </div>
+        <figcaption><b>図8｜プロフィールを開いた瞬間に見えるのは、この9マス</b><br>投稿を見て「気になる」と思った人が次にするのは、プロフィールを開くことです。そこで<b>店の空気が伝わるかどうか</b>でフォローが決まります。9枚のうち4枚をブランディング写真にするだけで、見え方が変わります。</figcaption>
+      </figure>
 
       <h3>週3投稿＋毎日ストーリーズ</h3>
       <div class="scroller">
