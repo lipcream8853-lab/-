@@ -1,0 +1,1155 @@
+<title>池田生花店のInstagram設計図</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700&family=Zen+Old+Mincho:wght@600;700;900&display=swap">
+
+<style>
+  :root {
+    --paper:      #F3F4F0;
+    --surface:    #FFFFFF;
+    --surface-2:  #EAECE4;
+    --ink:        #17211C;
+    --ink-2:      #4C574F;
+    --ink-3:      #79837B;
+    --rule:       #DBDFD5;
+    --rule-hard:  #B9BFB2;
+    --ai:         #1B3A5C;
+    --ai-soft:    #E6ECF3;
+    --beni:       #A8322C;
+    --beni-soft:  #F6E9E7;
+    --moss:       #3F6248;
+    --moss-soft:  #E7EEE6;
+
+    --font-display: "Zen Old Mincho", "Hiragino Mincho ProN", "Yu Mincho", serif;
+    --font-body: "Zen Kaku Gothic New", "Hiragino Sans", "Yu Gothic", system-ui, sans-serif;
+
+    --measure: 34rem;
+    --shell: 62rem;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper:      #12160F;
+      --surface:    #1A1F18;
+      --surface-2:  #232A21;
+      --ink:        #E9EBE3;
+      --ink-2:      #B3BAAF;
+      --ink-3:      #868E82;
+      --rule:       #2E362B;
+      --rule-hard:  #4A5345;
+      --ai:         #8FB4DA;
+      --ai-soft:    #1D2A36;
+      --beni:       #E4867E;
+      --beni-soft:  #33201F;
+      --moss:       #96BD9E;
+      --moss-soft:  #1E2A20;
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --paper:      #12160F;
+    --surface:    #1A1F18;
+    --surface-2:  #232A21;
+    --ink:        #E9EBE3;
+    --ink-2:      #B3BAAF;
+    --ink-3:      #868E82;
+    --rule:       #2E362B;
+    --rule-hard:  #4A5345;
+    --ai:         #8FB4DA;
+    --ai-soft:    #1D2A36;
+    --beni:       #E4867E;
+    --beni-soft:  #33201F;
+    --moss:       #96BD9E;
+    --moss-soft:  #1E2A20;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.9;
+    font-feature-settings: "palt" 1;
+    -webkit-font-smoothing: antialiased;
+    margin: 0;
+    padding: 0 1.25rem 6rem;
+  }
+
+  .shell {
+    max-width: var(--shell);
+    margin: 0 auto;
+  }
+
+  /* ---------- masthead ---------- */
+
+  .masthead {
+    padding: 4.5rem 0 2.25rem;
+    border-bottom: 3px double var(--rule-hard);
+  }
+
+  .eyebrow {
+    font-size: 0.75rem;
+    letter-spacing: 0.22em;
+    color: var(--ink-3);
+    font-weight: 500;
+    margin: 0 0 1.5rem;
+  }
+
+  .masthead h1 {
+    font-family: var(--font-display);
+    font-weight: 900;
+    font-size: clamp(2.1rem, 6vw, 3.4rem);
+    line-height: 1.28;
+    letter-spacing: 0.01em;
+    text-wrap: balance;
+    margin: 0 0 1.25rem;
+  }
+
+  .masthead h1 .thin {
+    display: block;
+    font-size: 0.5em;
+    font-weight: 600;
+    color: var(--ai);
+    letter-spacing: 0.06em;
+    margin-bottom: 0.5rem;
+  }
+
+  .standfirst {
+    max-width: var(--measure);
+    color: var(--ink-2);
+    font-size: 1.0625rem;
+    margin: 0 0 2rem;
+  }
+
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1.75rem;
+    font-size: 0.8125rem;
+    color: var(--ink-3);
+    letter-spacing: 0.04em;
+  }
+
+  .meta b {
+    color: var(--ink-2);
+    font-weight: 500;
+  }
+
+  /* ---------- verdict panel ---------- */
+
+  .verdict {
+    margin: 2.75rem 0 0;
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    border-left: 4px solid var(--beni);
+    padding: 1.75rem 1.75rem 1.5rem;
+  }
+
+  .verdict h2 {
+    font-family: var(--font-display);
+    font-size: 1.0625rem;
+    letter-spacing: 0.06em;
+    color: var(--beni);
+    margin: 0 0 0.875rem;
+  }
+
+  .verdict p {
+    margin: 0;
+    max-width: var(--measure);
+    font-size: 1.0625rem;
+  }
+
+  .verdict p + p { margin-top: 0.75rem; }
+
+  /* ---------- sections ---------- */
+
+  section {
+    display: grid;
+    grid-template-columns: 4.5rem minmax(0, 1fr);
+    gap: 0 1.75rem;
+    padding-top: 4rem;
+  }
+
+  .num {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--ai);
+    line-height: 1.5;
+    font-variant-numeric: tabular-nums;
+    border-top: 2px solid var(--ai);
+    padding-top: 0.5rem;
+  }
+
+  .body { min-width: 0; }
+
+  .body > h2 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: clamp(1.4rem, 3.4vw, 1.85rem);
+    line-height: 1.5;
+    letter-spacing: 0.01em;
+    text-wrap: balance;
+    margin: 0 0 0.5rem;
+    padding-top: 0.375rem;
+  }
+
+  .body > .sub {
+    color: var(--ink-3);
+    font-size: 0.875rem;
+    letter-spacing: 0.05em;
+    margin: 0 0 1.75rem;
+    padding-bottom: 1.25rem;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .body p {
+    max-width: var(--measure);
+    margin: 0 0 1.25rem;
+  }
+
+  h3 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1.125rem;
+    letter-spacing: 0.02em;
+    margin: 2.5rem 0 0.875rem;
+  }
+
+  h4 {
+    font-size: 0.9375rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    margin: 1.75rem 0 0.625rem;
+    color: var(--ink);
+  }
+
+  strong { font-weight: 700; }
+
+  .hl {
+    background: linear-gradient(transparent 62%, var(--beni-soft) 62%);
+    font-weight: 700;
+  }
+
+  ul, ol {
+    max-width: var(--measure);
+    margin: 0 0 1.25rem;
+    padding-left: 1.35rem;
+  }
+
+  li { margin-bottom: 0.5rem; }
+  li::marker { color: var(--ai); }
+
+  /* ---------- role cards ---------- */
+
+  .roles {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .role {
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    padding: 1.25rem 1.25rem 1.375rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.625rem;
+  }
+
+  .role .tag {
+    font-size: 0.6875rem;
+    letter-spacing: 0.16em;
+    font-weight: 700;
+    color: var(--surface);
+    background: var(--ai);
+    padding: 0.2rem 0.55rem;
+    align-self: flex-start;
+  }
+
+  .role.b .tag { background: var(--moss); }
+  .role.c .tag { background: var(--beni); }
+
+  .role h4 {
+    font-family: var(--font-display);
+    font-size: 1.0625rem;
+    margin: 0;
+    letter-spacing: 0.03em;
+  }
+
+  .role p {
+    margin: 0;
+    font-size: 0.9375rem;
+    line-height: 1.8;
+    color: var(--ink-2);
+  }
+
+  .role .shots {
+    margin-top: auto;
+    padding-top: 0.75rem;
+    border-top: 1px dashed var(--rule-hard);
+    font-size: 0.8125rem;
+    color: var(--ink-3);
+    line-height: 1.8;
+  }
+
+  /* ---------- tables ---------- */
+
+  .scroller {
+    overflow-x: auto;
+    margin: 0 0 1.5rem;
+    border: 1px solid var(--rule);
+    background: var(--surface);
+  }
+
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    min-width: 34rem;
+    font-size: 0.9375rem;
+  }
+
+  th, td {
+    text-align: left;
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid var(--rule);
+    vertical-align: top;
+    line-height: 1.75;
+  }
+
+  thead th {
+    background: var(--surface-2);
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    font-weight: 700;
+    color: var(--ink-2);
+    white-space: nowrap;
+  }
+
+  tbody tr:last-child td { border-bottom: none; }
+
+  td.stage {
+    font-family: var(--font-display);
+    font-weight: 700;
+    color: var(--ai);
+    white-space: nowrap;
+  }
+
+  td.num-cell {
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+  }
+
+  /* ---------- callouts ---------- */
+
+  .note {
+    background: var(--ai-soft);
+    border-left: 3px solid var(--ai);
+    padding: 1.125rem 1.25rem;
+    margin: 0 0 1.5rem;
+    font-size: 0.9375rem;
+    line-height: 1.85;
+  }
+
+  .note > :last-child { margin-bottom: 0; }
+  .note p { max-width: none; }
+
+  .note .label {
+    display: block;
+    font-size: 0.6875rem;
+    letter-spacing: 0.16em;
+    font-weight: 700;
+    color: var(--ai);
+    margin-bottom: 0.5rem;
+  }
+
+  .note.warn {
+    background: var(--beni-soft);
+    border-left-color: var(--beni);
+  }
+  .note.warn .label { color: var(--beni); }
+
+  /* ---------- do / dont ---------- */
+
+  .dd {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .dd > div {
+    padding: 1.125rem 1.25rem 1.25rem;
+    border: 1px solid var(--rule);
+    background: var(--surface);
+  }
+
+  .dd h4 {
+    margin: 0 0 0.75rem;
+    font-size: 0.8125rem;
+    letter-spacing: 0.14em;
+  }
+
+  .dd .do h4 { color: var(--moss); }
+  .dd .dont h4 { color: var(--beni); }
+  .dd .do { border-top: 3px solid var(--moss); }
+  .dd .dont { border-top: 3px solid var(--beni); }
+
+  .dd ul {
+    margin: 0;
+    padding-left: 1.1rem;
+    font-size: 0.9375rem;
+    line-height: 1.8;
+  }
+
+  .dd li { margin-bottom: 0.5rem; }
+  .dd li:last-child { margin-bottom: 0; }
+
+  /* ---------- prompt blocks ---------- */
+
+  .prompt {
+    background: var(--surface);
+    border: 1px solid var(--rule-hard);
+    margin: 0 0 1.25rem;
+  }
+
+  .prompt > header {
+    background: var(--surface-2);
+    padding: 0.625rem 1rem;
+    border-bottom: 1px solid var(--rule-hard);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.5rem 0.75rem;
+  }
+
+  .prompt > header b {
+    font-family: var(--font-display);
+    font-size: 0.9375rem;
+    letter-spacing: 0.04em;
+  }
+
+  .prompt > header span {
+    font-size: 0.75rem;
+    color: var(--ink-3);
+    letter-spacing: 0.04em;
+  }
+
+  .prompt .text {
+    padding: 1.125rem 1.25rem;
+    font-size: 0.9375rem;
+    line-height: 2;
+    white-space: pre-wrap;
+    word-break: break-word;
+  }
+
+  .prompt .text u {
+    text-decoration: none;
+    border-bottom: 2px solid var(--beni);
+    color: var(--beni);
+    font-weight: 700;
+    padding-bottom: 1px;
+  }
+
+  .four {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .four div {
+    border: 1px solid var(--rule);
+    background: var(--surface);
+    padding: 0.875rem 1rem;
+  }
+
+  .four b {
+    display: block;
+    font-family: var(--font-display);
+    font-size: 1rem;
+    color: var(--ai);
+    margin-bottom: 0.25rem;
+  }
+
+  .four span {
+    font-size: 0.8125rem;
+    color: var(--ink-2);
+    line-height: 1.75;
+  }
+
+  /* ---------- checklist ---------- */
+
+  .check {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1.5rem;
+    max-width: var(--measure);
+    border-top: 1px solid var(--rule);
+  }
+
+  .check li {
+    display: flex;
+    gap: 0.875rem;
+    align-items: flex-start;
+    padding: 0.75rem 0.25rem;
+    border-bottom: 1px solid var(--rule);
+    margin: 0;
+    font-size: 0.9375rem;
+    line-height: 1.8;
+  }
+
+  .check li::before {
+    content: "";
+    flex: 0 0 auto;
+    width: 1.05rem;
+    height: 1.05rem;
+    margin-top: 0.4rem;
+    border: 1.5px solid var(--rule-hard);
+    background: var(--surface);
+  }
+
+  /* ---------- action table ---------- */
+
+  .actions {
+    counter-reset: act;
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1.5rem;
+  }
+
+  .actions li {
+    counter-increment: act;
+    display: grid;
+    grid-template-columns: 2.25rem minmax(0, 1fr);
+    gap: 1rem;
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--rule);
+    margin: 0;
+  }
+
+  .actions li::before {
+    content: counter(act);
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1.125rem;
+    color: var(--surface);
+    background: var(--ai);
+    width: 2rem;
+    height: 2rem;
+    display: grid;
+    place-items: center;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .actions b {
+    display: block;
+    font-size: 1rem;
+    margin-bottom: 0.2rem;
+  }
+
+  .actions span {
+    font-size: 0.9375rem;
+    color: var(--ink-2);
+    line-height: 1.8;
+  }
+
+  .actions .who {
+    display: inline-block;
+    margin-top: 0.4rem;
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    color: var(--ink-3);
+    border: 1px solid var(--rule-hard);
+    padding: 0.1rem 0.5rem;
+  }
+
+  /* ---------- closing ---------- */
+
+  .closer {
+    margin-top: 4.5rem;
+    padding-top: 2rem;
+    border-top: 3px double var(--rule-hard);
+    font-size: 0.8125rem;
+    color: var(--ink-3);
+    line-height: 1.9;
+    max-width: var(--measure);
+  }
+
+  /* ---------- responsive ---------- */
+
+  @media (max-width: 40rem) {
+    body { padding: 0 1rem 4rem; line-height: 1.85; }
+    section {
+      grid-template-columns: 1fr;
+      gap: 0;
+      padding-top: 3rem;
+    }
+    .num {
+      border-top: none;
+      border-bottom: 2px solid var(--ai);
+      padding: 0 0 0.25rem;
+      margin-bottom: 1rem;
+      font-size: 1.125rem;
+      display: inline-block;
+    }
+    .masthead { padding-top: 3rem; }
+  }
+
+  /* ---------- print ---------- */
+
+  @media print {
+    :root {
+      --paper: #FFF; --surface: #FFF; --surface-2: #F2F2F2;
+      --ink: #000; --ink-2: #333; --ink-3: #555;
+      --rule: #CCC; --rule-hard: #888;
+      --ai: #1B3A5C; --beni: #A8322C; --moss: #3F6248;
+      --ai-soft: #EEF2F7; --beni-soft: #F8EDEC; --moss-soft: #EDF2EC;
+    }
+    body { font-size: 10.5pt; line-height: 1.7; padding: 0; }
+    section { break-inside: avoid; padding-top: 2rem; }
+    .role, .prompt, .note, .dd > div { break-inside: avoid; }
+    .masthead { padding-top: 0; }
+  }
+</style>
+
+<div class="shell">
+
+  <header class="masthead">
+    <p class="eyebrow">池田生花店｜SNS運用ミーティング資料</p>
+    <h1>
+      <span class="thin">フォロワーが増えない理由は、写真の「役割」にあります</span>
+      花の写真を、<br>売れる写真に変える
+    </h1>
+    <p class="standfirst">
+      きれいな花の写真は、すでに撮れています。増えないのは、その写真が全部「商品写真」だからです。
+      セミナーで学んだ〈写真の3つの役割〉〈カスタマージャーニー〉〈POE〉を、中津の花屋の現場に落とし込んだ運用設計です。
+    </p>
+    <div class="meta">
+      <span><b>対象</b>　Instagram（フィード・リール・ストーリーズ）</span>
+      <span><b>目的</b>　フォロワー増加 → 来店・電話注文</span>
+      <span><b>期間</b>　まず30日間の試験運用</span>
+    </div>
+  </header>
+
+  <div class="verdict">
+    <h2>この資料の結論</h2>
+    <p>
+      フォロワーは「いい写真」では増えません。増えるのは
+      <span class="hl">保存・シェアされた写真</span>です。
+      そして保存・シェアされるのは、商品写真ではなく
+      <strong>「普段見ることのない花屋の世界」を写した写真</strong>と、
+      <strong>「あとで役に立つ」説明写真</strong>の2種類です。
+    </p>
+    <p>
+      今の投稿は3つの役割のうち<strong>②商品写真に偏っています</strong>。
+      これは「もう買う気のあるお客様」にしか効かない写真で、まだ当店を知らない人のフィードには届きません。
+      配分を変えるだけで、リーチの母数が変わります。
+    </p>
+  </div>
+
+  <!-- 1 -->
+  <section>
+    <div class="num">01</div>
+    <div class="body">
+      <h2>まず現状の診断</h2>
+      <p class="sub">なぜ「きれいな写真」なのにフォロワーが増えないのか</p>
+
+      <p>
+        Instagramでフォロワーが増えるまでには、必ず4つの段階を通ります。どこか一段が詰まると、その先には進みません。
+      </p>
+
+      <div class="scroller">
+        <table>
+          <thead>
+            <tr><th>段階</th><th>そこで起きること</th><th>詰まりやすい原因</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="stage">① 発見される</td>
+              <td>フォロワー以外の発見タブ・リールに表示される</td>
+              <td>保存・シェアが少なく、Instagramが「広める価値あり」と判断していない</td>
+            </tr>
+            <tr>
+              <td class="stage">② 保存される</td>
+              <td>「あとで見返したい」と思われる</td>
+              <td>商品写真だけで、見返す理由がない</td>
+            </tr>
+            <tr>
+              <td class="stage">③ プロフを見る</td>
+              <td>「この店、何者？」と確認される</td>
+              <td>プロフィール文と最初の9枚で店の世界観が伝わらない</td>
+            </tr>
+            <tr>
+              <td class="stage">④ フォローする</td>
+              <td>「これからも見たい」と判断される</td>
+              <td>次に何が投稿されるか予想できない（＝投稿にリズムがない）</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="note">
+        <span class="label">POEで見ると</span>
+        <p>
+          今の運用は<strong>Owned（自社発信）だけ</strong>で完結しています。フォロワーが伸びるのは
+          <strong>Earned（保存・シェア・口コミ）</strong>が発生したときです。
+          セミナーにあった通りEarnedは信頼度が最も高く、しかもコントロールできません。
+          だからこそ「保存されやすい写真」を意図して撮るところからしか始まりません。
+        </p>
+      </div>
+
+      <p>
+        つまり<strong>やることは1つ</strong>です。写真の役割を意識して撮り分け、投稿の配分を変える。以降はその具体です。
+      </p>
+    </div>
+  </section>
+
+  <!-- 2 -->
+  <section>
+    <div class="num">02</div>
+    <div class="body">
+      <h2>写真の3つの役割を、花屋に当てはめる</h2>
+      <p class="sub">同じ花束でも、役割が違えば撮り方が変わる</p>
+
+      <div class="roles">
+        <div class="role a">
+          <span class="tag">ROLE 1</span>
+          <h4>ブランディング写真</h4>
+          <p>店の世界観を伝える写真。「この店に頼みたい」という気持ちをつくる。<strong>フォロワー増加の主役</strong>。</p>
+          <div class="shots">
+            朝の市場・仕入れの箱／水を打った店先／花を組む手元／91年使ってきた道具・什器／季節ごとの店頭の変化
+          </div>
+        </div>
+        <div class="role b">
+          <span class="tag">ROLE 2</span>
+          <h4>商品写真</h4>
+          <p>商品の特徴と魅力を<strong>正確に</strong>伝える写真。実物と違って見えるのが一番よくない。</p>
+          <div class="shots">
+            仏花一対／還暦の赤バラ60本／敬老の日の鉢植え／今週の3,000円・5,000円の花束（価格帯別に定点で）
+          </div>
+        </div>
+        <div class="role c">
+          <span class="tag">ROLE 3</span>
+          <h4>説明写真</h4>
+          <p>使い方・大きさ・手順を具体的に示す写真。<strong>保存されるのはこれ</strong>。役に立つから残される。</p>
+          <div class="shots">
+            玄関に置いたときのサイズ感／花瓶に活けた状態／水切りの手順／お盆に長持ちさせるコツ／のしの書き方
+          </div>
+        </div>
+      </div>
+
+      <h3>いちばん大事な考え方：人を動かす写真とは</h3>
+      <p>
+        セミナーの「見慣れた博多駅／いつもと違う博多駅／行ったことのない札幌駅」の例がそのまま当てはまります。
+        <span class="hl">普段見ることのない世界を撮る</span>から、人は感動し、行動します。
+      </p>
+
+      <div class="scroller">
+        <table>
+          <thead>
+            <tr><th>見え方</th><th>花屋でいうと</th><th>反応</th></tr>
+          </thead>
+          <tbody>
+            <tr><td class="stage">見慣れた景色</td><td>店頭に並んだ花束の写真</td><td>スクロールされて終わり</td></tr>
+            <tr><td class="stage">いつもと違う</td><td>閉店後、花を仕込んでいる作業場</td><td>「へえ」と手が止まる</td></tr>
+            <tr><td class="stage">見たことがない</td><td>早朝の仕入れ／60本の赤バラが1本ずつ組み上がる過程</td><td>保存・シェアされる</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="note warn">
+        <span class="label">ここが転換点</span>
+        <p>
+          お客様は「花束」を買っているのではなく、<strong>渡したあとの喜ばれる瞬間</strong>を買っています。
+          だから写真も商品の紹介ではなく、<strong>お客様の“理想の未来”</strong>を写す。
+          花束そのものより、<strong>受け取った人が笑っている写真のほうが強い</strong>のはこのためです。
+          （※お客様の写真は必ず口頭で掲載許可をいただき、顔出しの可否を確認してください）
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3 -->
+  <section>
+    <div class="num">03</div>
+    <div class="body">
+      <h2>撮り方のルールを決める</h2>
+      <p class="sub">上手い下手ではなく、決めごとを守れば写真は揃う</p>
+
+      <h3>光｜これだけで7割決まります</h3>
+      <ul>
+        <li><strong>晴れの日の日陰</strong>、または北向きの窓際で撮る。直射日光は白い花びらが白飛びします。</li>
+        <li>時間は<strong>午前9時〜11時</strong>が最も安定。夕方は色が黄色く転びます。</li>
+        <li>店内の蛍光灯と外光が混ざると色がおかしくなるので、<strong>撮るときは近くの照明を消す</strong>。</li>
+        <li>フラッシュは使わない。花びらのつやが飛んで造花のように写ります。</li>
+      </ul>
+
+      <h3>背景｜「撮影の定位置」を3か所つくる</h3>
+      <p>
+        毎回背景が違うと、プロフィールを開いたときにバラバラに見えます。店の中に<strong>撮る場所を3つだけ決めて固定</strong>します。
+      </p>
+      <ul>
+        <li><strong>定位置A（商品写真用）</strong>：白または薄いグレーの壁・紙。花の色が正確に出ます。</li>
+        <li><strong>定位置B（ブランディング用）</strong>：古い木の作業台。91年の店の空気が写ります。</li>
+        <li><strong>定位置C（説明写真用）</strong>：実際の玄関・仏壇まわりに近い場所。サイズ感が伝わります。</li>
+      </ul>
+
+      <h3>構図｜3枚セットで撮るのを習慣に</h3>
+      <div class="scroller">
+        <table>
+          <thead>
+            <tr><th>カット</th><th>何を撮るか</th><th>役割</th></tr>
+          </thead>
+          <tbody>
+            <tr><td class="stage">寄り</td><td>花芯、花びらの重なり、水滴</td><td>目を止めさせる（1枚目に強い）</td></tr>
+            <tr><td class="stage">引き</td><td>花束・アレンジ全体を真正面から</td><td>商品を正確に伝える</td></tr>
+            <tr><td class="stage">使用シーン</td><td>玄関・仏壇・テーブルに置いた状態</td><td>理想の未来を見せる</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h4>細かいが効くこと</h4>
+      <ul>
+        <li><strong>縦4:5で撮る。</strong>正方形よりフィードの占有面積が広く、目に留まりやすい。リールは9:16。</li>
+        <li><strong>人の手を入れる。</strong>茎を持つ手、リボンを結ぶ手。人がやっている感が出て保存率が上がります。</li>
+        <li><strong>大きさの基準を一緒に写す。</strong>手・ペットボトル・玄関。「思ったより小さかった」を防ぎます。</li>
+        <li><strong>主役をひとつに絞り、余白をつくる。</strong>全部入れようとすると何も伝わりません。</li>
+        <li><strong>渡す前に必ず30秒撮る。</strong>お届け・お渡し前が唯一の撮影チャンスです。</li>
+      </ul>
+
+      <div class="dd">
+        <div class="do">
+          <h4>やること</h4>
+          <ul>
+            <li>作った本人が、作った直後に撮る</li>
+            <li>加工は明るさを少し上げる程度まで</li>
+            <li>1回の撮影で3カット以上残す</li>
+            <li>配達先の玄関先の風景も1枚</li>
+            <li>撮った写真は共有フォルダに日付で保存</li>
+          </ul>
+        </div>
+        <div class="dont">
+          <h4>やらないこと</h4>
+          <ul>
+            <li>彩度を上げすぎる（実物と違う＝クレーム）</li>
+            <li>背景に段ボール・レジ・私物が写り込む</li>
+            <li>夜の蛍光灯下で商品写真を撮る</li>
+            <li>1投稿に何種類も詰め込む</li>
+            <li>お客様の顔を許可なく載せる</li>
+          </ul>
+        </div>
+      </div>
+
+      <h4>撮影前チェックリスト（印刷して作業台に貼る）</h4>
+      <ul class="check">
+        <li>照明を消して、窓からの光だけになっているか</li>
+        <li>背景に余計なものが写っていないか</li>
+        <li>縦4:5になっているか</li>
+        <li>寄り・引き・使用シーンの3枚を撮ったか</li>
+        <li>大きさが分かるものが写っているか</li>
+        <li>花の色は、実物と同じに見えるか</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 4 -->
+  <section>
+    <div class="num">04</div>
+    <div class="body">
+      <h2>投稿の型｜共感 → キーワード → 解決</h2>
+      <p class="sub">写真の並べ方と、キャプションの書き方を固定する</p>
+
+      <p>
+        セミナーの「共感 → キーワード → 解決」をそのまま投稿の順番にします。
+        1枚目で<strong>お客様の心の声</strong>を出し、最後に<strong>解決した未来</strong>を見せます。
+      </p>
+
+      <div class="scroller">
+        <table>
+          <thead>
+            <tr><th>枚数</th><th>内容</th><th>写真の役割</th></tr>
+          </thead>
+          <tbody>
+            <tr><td class="stage">1枚目</td><td>共感の一言を文字で入れる<br>例：「祖母に何色を贈ればいいか分からない」</td><td>ブランディング／寄り</td></tr>
+            <tr><td class="stage">2〜3枚目</td><td>具体的な提案（色の組み合わせ・種類）</td><td>商品写真</td></tr>
+            <tr><td class="stage">4〜5枚目</td><td>飾った状態・サイズ感・お手入れ</td><td>説明写真</td></tr>
+            <tr><td class="stage">最後</td><td>「保存しておくと選ぶとき迷いません」＋電話・DMの案内</td><td>行動を促す</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>キャプションの決まりごと</h3>
+      <ul>
+        <li><strong>300字以内。</strong>長いと読まれません。</li>
+        <li><strong>専門用語を使わない。</strong>「スプレー咲き」より「小さい花がたくさんつく種類」。</li>
+        <li><strong>1行目に結論。</strong>「敬老の日は、ピンクと黄色を選べばまず外しません。」</li>
+        <li><strong>最後に必ず一言の行動案内。</strong>保存・DM・電話のどれか1つだけ。</li>
+        <li>ハッシュタグは<strong>固定セット＋その日の内容2〜3個</strong>。毎回考えない。</li>
+      </ul>
+
+      <div class="note">
+        <span class="label">ハッシュタグの固定セット（案）</span>
+        <p>
+          #中津市 #中津市花屋 #大分県中津市 #花のある暮らし #花屋 #仏花 #お供え花 #還暦祝い #花束 #フラワーギフト
+          ／ここに「#敬老の日」「#お盆」など、その回のテーマを2〜3個足す。
+        </p>
+      </div>
+
+      <h3>誰に・何を・どこで（発信の入口）</h3>
+      <p>
+        ここが曖昧なままだと、AIに聞いても答えは曖昧にしか返ってきません。会議で言葉にして決めます。
+      </p>
+      <div class="scroller">
+        <table>
+          <thead>
+            <tr><th>項目</th><th>当店の設定（たたき台）</th></tr>
+          </thead>
+          <tbody>
+            <tr><td class="stage">誰に</td><td>中津市とその近郊に住む40〜70代。両親・祖父母へ贈る立場の人と、仏事を任される立場の人</td></tr>
+            <tr><td class="stage">何を</td><td>創業91年・年間3,000〜4,000件の実績。「予算だけ伝えれば、その場面に合う花を選んでくれる安心感」</td></tr>
+            <tr><td class="stage">どこで</td><td>Instagram（発見・世界観）＋電話（注文）。Instagramは注文の場ではなく<strong>信頼をためる場</strong></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5 -->
+  <section>
+    <div class="num">05</div>
+    <div class="body">
+      <h2>投稿の配分と、週のリズム</h2>
+      <p class="sub">量より、続く形をつくる</p>
+
+      <p>
+        カスタマージャーニー（認知 → 興味 → 検討 → 購入）の全段階に写真を配ります。
+        今は「検討・購入」向けの商品写真に偏っているので、<strong>認知向けを増やす</strong>のが今回の変更点です。
+      </p>
+
+      <div class="scroller">
+        <table>
+          <thead>
+            <tr><th>段階</th><th>写真の役割</th><th>投稿面</th><th class="num-cell">配分</th></tr>
+          </thead>
+          <tbody>
+            <tr><td class="stage">認知</td><td>ブランディング写真（仕入れ・作業場・季節の店先）</td><td>リール</td><td class="num-cell">4割</td></tr>
+            <tr><td class="stage">興味</td><td>説明写真（飾り方・長持ちのコツ・サイズ感）</td><td>フィード</td><td class="num-cell">3割</td></tr>
+            <tr><td class="stage">検討</td><td>商品写真（価格帯別・場面別）</td><td>フィード</td><td class="num-cell">2割</td></tr>
+            <tr><td class="stage">購入</td><td>お客様の声・お届け事例・予約案内</td><td>ストーリーズ</td><td class="num-cell">1割</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>週3投稿＋毎日ストーリーズ</h3>
+      <div class="scroller">
+        <table>
+          <thead>
+            <tr><th>曜日</th><th>内容</th><th>形式</th><th>撮影タイミング</th></tr>
+          </thead>
+          <tbody>
+            <tr><td class="stage">月</td><td>お手入れ・飾り方（説明写真）</td><td>フィード5枚</td><td>前週の作業中に撮りためる</td></tr>
+            <tr><td class="stage">水</td><td>仕入れ・作業場（ブランディング）</td><td>リール15〜30秒</td><td>その日の朝</td></tr>
+            <tr><td class="stage">金</td><td>今週のおすすめ（商品写真・価格つき）</td><td>フィード3枚</td><td>金曜の午前</td></tr>
+            <tr><td class="stage">毎日</td><td>入荷した花・配達風景・店先の様子</td><td>ストーリーズ1本</td><td>その場で30秒</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="note warn">
+        <span class="label">季節の前倒し</span>
+        <p>
+          お盆・敬老の日・お彼岸・還暦シーズンは、<strong>本番の3週間前から投稿を始める</strong>のが鉄則です。
+          お客様が調べ始めるのは当日ではありません。8月13日前後に集中するお盆なら、<strong>7月下旬から</strong>仏花の選び方を投稿します。
+        </p>
+      </div>
+
+      <h3>見る数字を変える</h3>
+      <p>
+        フォロワー数は結果であって、日々見る数字ではありません。インサイトで次の4つだけを毎週メモします。
+      </p>
+      <div class="scroller">
+        <table>
+          <thead>
+            <tr><th>指標</th><th>意味</th><th class="num-cell">30日後の目標</th></tr>
+          </thead>
+          <tbody>
+            <tr><td class="stage">保存数</td><td>役に立つ投稿だったか</td><td class="num-cell">リーチの2%以上</td></tr>
+            <tr><td class="stage">フォロワー外リーチ率</td><td>新しい人に届いているか</td><td class="num-cell">50%以上</td></tr>
+            <tr><td class="stage">プロフィール訪問数</td><td>「この店は何者？」と思われたか</td><td class="num-cell">前月比 +30%</td></tr>
+            <tr><td class="stage">シェア数</td><td>Earned（口コミ）が発生しているか</td><td class="num-cell">1投稿あたり3件以上</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6 -->
+  <section>
+    <div class="num">06</div>
+    <div class="body">
+      <h2>ChatGPTに頼むときのプロンプト</h2>
+      <p class="sub">セミナーの4点セットを、当店用に書き換えたもの</p>
+
+      <div class="four">
+        <div><b>① 役割</b><span>あなたは〇〇の専門家です</span></div>
+        <div><b>② 目的</b><span>〇〇を作ってください</span></div>
+        <div><b>③ 条件</b><span>誰向け・文字数・雰囲気</span></div>
+        <div><b>④ 形式</b><span>箇条書き・表・3案など</span></div>
+      </div>
+
+      <p>
+        以下はそのまま貼って使えます。<u style="text-decoration:none;border-bottom:2px solid var(--beni);color:var(--beni);font-weight:700;">赤い部分</u>だけ、その日の内容に差し替えてください。
+      </p>
+
+      <div class="prompt">
+        <header><b>A. 撮影ディレクションを出してもらう</b><span>何を撮ればいいか迷ったとき</span></header>
+        <div class="text">あなたは、地域の小売店のSNS写真を指導するフォトディレクターです。
+
+私の事業は大分県中津市の生花店「池田生花店」です。創業91年、年間3,000〜4,000件の花束・アレンジメントを承っています。
+今回撮りたいテーマは「<u>敬老の日の花</u>」です。
+届けたい相手は「<u>離れて暮らす祖父母に花を贈りたい40〜60代</u>」です。
+
+このテーマで、Instagram用に撮るべき写真を「ブランディング写真・商品写真・説明写真」の3つの役割ごとに、それぞれ3カットずつ提案してください。
+各カットについて、次の4点を表形式で出してください。
+・何を写すか　・光と時間帯　・構図（寄り／引き／使用シーン）　・その写真が狙う効果
+専門的な撮影用語は使わず、スマホで撮る前提で書いてください。</div>
+      </div>
+
+      <div class="prompt">
+        <header><b>B. キャプションを書いてもらう</b><span>写真は撮れた、文章が浮かばないとき</span></header>
+        <div class="text">あなたは、地域の小規模事業者を支援する販促担当者です。
+
+私の事業は大分県中津市の生花店「池田生花店」です。
+今回の投稿テーマは「<u>敬老の日に贈る花の選び方</u>」です。
+届けたい相手は「<u>祖母に何色を贈ればいいか分からない40〜60代</u>」です。
+そのお客様の悩みは「<u>色も予算も分からず、毎年同じものになってしまう</u>」ことです。
+利用後は「<u>迷わず選べて、喜ばれた</u>」という変化が期待できます。
+
+この内容でInstagramのキャプションを300字以内で作成してください。
+構成は「共感の一言 → 具体的な提案 → 解決した後の様子 → 保存を促す一文」の順にしてください。
+専門用語を使わず、親しみやすく信頼感のある文章にしてください。
+最後にハッシュタグ候補を10個、別行で出してください。</div>
+      </div>
+
+      <div class="prompt">
+        <header><b>C. 1か月の投稿計画を作ってもらう</b><span>毎月はじめに1回</span></header>
+        <div class="text">あなたは、地域の小売店のSNS運用を設計するコンサルタントです。
+
+私の事業は大分県中津市の生花店「池田生花店」です。主な商品は仏花・お供えの花、お祝いの花束、鉢植えです。
+目的は、Instagramのフォロワーを増やし、電話でのご注文につなげることです。
+対象は「中津市と近郊に住む40〜70代」です。
+投稿できるのは週3回（月・水・金）＋毎日ストーリーズ1本です。
+
+<u>9月</u>の1か月分の投稿計画を、表形式で作成してください。
+表の列は「日付・曜日・テーマ・写真の役割（ブランディング／商品／説明）・形式（フィード／リール／ストーリーズ）・撮影に必要なもの」としてください。
+その月の行事（<u>敬老の日・お彼岸</u>）は3週間前から扱ってください。
+認知4：興味3：検討2：購入1の配分になるようにしてください。</div>
+      </div>
+
+      <div class="prompt">
+        <header><b>D. 数字を見て改善点を出してもらう</b><span>毎週の振り返りで</span></header>
+        <div class="text">あなたは、SNSの投稿データを分析するアナリストです。
+
+私の事業は大分県中津市の生花店「池田生花店」です。
+直近の投稿データは次の通りです。
+<u>・投稿A（仏花の選び方・フィード5枚）：リーチ1,200／いいね45／保存18／シェア2／プロフ訪問12
+・投稿B（店頭の花・フィード1枚）：リーチ380／いいね30／保存1／シェア0／プロフ訪問2
+・投稿C（朝の仕入れ・リール）：リーチ3,400／いいね80／保存25／シェア9／プロフ訪問41</u>
+
+このデータをもとに、次の3点を出してください。
+1. 数字から読み取れること（3つ、初心者にも分かる言葉で）
+2. 次の投稿で改善すべき点（3つ、具体的な行動として）
+3. 次に試すべき投稿テーマ（3案、写真の役割つき）
+専門用語には必ずかっこ書きで説明を添えてください。</div>
+      </div>
+
+      <div class="note">
+        <span class="label">プロンプトを使うときのコツ</span>
+        <p>
+          返ってきた答えが薄いときは、<strong>条件（誰向け・悩み・文字数）が足りていない</strong>のがほぼ原因です。
+          「誰に・何を・どこで」を先に決めておけば、AIの答えは一気に具体的になります。
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7 -->
+  <section>
+    <div class="num">07</div>
+    <div class="body">
+      <h2>今日の会議で決めること</h2>
+      <p class="sub">この7つが決まれば、明日から動けます</p>
+
+      <ol class="actions">
+        <li>
+          <div>
+            <b>撮影の定位置を3か所決める</b>
+            <span>白背景（商品）／作業台（世界観）／玄関まわり（説明）。決めたら動かさない。</span>
+            <span class="who">担当　　　　　　／　期限　　　　　　</span>
+          </div>
+        </li>
+        <li>
+          <div>
+            <b>撮影当番を決める</b>
+            <span>花を作った本人が撮るのが基本。渡す前に必ず30秒。</span>
+            <span class="who">担当　　　　　　／　期限　　　　　　</span>
+          </div>
+        </li>
+        <li>
+          <div>
+            <b>投稿枠を曜日で固定する</b>
+            <span>月＝説明／水＝リール／金＝商品。誰が投稿するかもセットで決める。</span>
+            <span class="who">担当　　　　　　／　期限　　　　　　</span>
+          </div>
+        </li>
+        <li>
+          <div>
+            <b>写真の共有場所を作る</b>
+            <span>スマホの共有アルバムなどに「日付＋テーマ」で保存。撮りためが命。</span>
+            <span class="who">担当　　　　　　／　期限　　　　　　</span>
+          </div>
+        </li>
+        <li>
+          <div>
+            <b>ハッシュタグの固定セットを確定する</b>
+            <span>本資料の案をたたき台に、10個を決めてメモアプリに保存。</span>
+            <span class="who">担当　　　　　　／　期限　　　　　　</span>
+          </div>
+        </li>
+        <li>
+          <div>
+            <b>お客様写真の掲載ルールを決める</b>
+            <span>口頭で許可をいただく。顔出しの可否を確認する。断られたら花だけ撮る。</span>
+            <span class="who">担当　　　　　　／　期限　　　　　　</span>
+          </div>
+        </li>
+        <li>
+          <div>
+            <b>30日後の振り返り日を決める</b>
+            <span>見る数字は「保存数・フォロワー外リーチ率・プロフィール訪問数・シェア数」の4つだけ。</span>
+            <span class="who">日程　　月　　日　／　担当　　　　　　</span>
+          </div>
+        </li>
+      </ol>
+
+      <div class="note">
+        <span class="label">まず1か月やること</span>
+        <p>
+          全部を変えようとせず、<strong>「水曜日のリール（仕入れ・作業場）」だけ</strong>を必ず続けてみてください。
+          フォロワー外に届く投稿はこれです。ここが動き出すと、他の投稿のリーチも一緒に上がります。
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <p class="closer">
+    池田生花店｜Instagram運用ミーティング資料。<br>
+    セミナー内容（プロンプト4点セット／写真の3つの役割／カスタマージャーニー／POE／誰に・何を・どこで）を、当店の商品構成と地域性に合わせて再構成したものです。
+    数値目標は開始時点のたたき台であり、30日後の実績をもとに見直します。
+  </p>
+
+</div>
