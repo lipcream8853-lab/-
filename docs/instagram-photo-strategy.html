@@ -652,6 +652,11 @@
 
   /* ---------- print ---------- */
 
+  @page {
+    size: A4 portrait;
+    margin: 14mm 15mm 16mm;
+  }
+
   @media print {
     :root {
       --paper: #FFF; --surface: #FFF; --surface-2: #F2F2F2;
@@ -660,10 +665,28 @@
       --ai: #1B3A5C; --beni: #A8322C; --moss: #3F6248;
       --ai-soft: #EEF2F7; --beni-soft: #F8EDEC; --moss-soft: #EDF2EC;
     }
-    body { font-size: 10.5pt; line-height: 1.7; padding: 0; }
-    section { break-inside: avoid; padding-top: 2rem; }
-    .role, .prompt, .note, .dd > div { break-inside: avoid; }
-    .masthead { padding-top: 0; }
+    body { font-size: 10pt; line-height: 1.72; padding: 0; }
+    .shell { max-width: none; }
+
+    section { break-inside: avoid; padding-top: 1.75rem; }
+    .role, .prompt, .note, .dd > div, figure, .scroller,
+    .actions li, .verdict, .four { break-inside: avoid; }
+    figcaption { break-before: avoid; }
+    h3, h4 { break-after: avoid; }
+
+    .masthead { padding-top: 0; padding-bottom: 1.5rem; }
+    .masthead h1 { font-size: 22pt; }
+    .standfirst { font-size: 10.5pt; margin-bottom: 1.25rem; }
+
+    /* 大きな塊の前で改ページして、図と説明が離れないようにする */
+    section:nth-of-type(3),
+    section:nth-of-type(6) { break-before: page; }
+
+    .fig-frame { padding: 0.75rem; }
+    .check li { padding: 0.55rem 0.25rem; }
+    .check li::before { border-color: #666; }
+
+    a { color: inherit; text-decoration: none; }
   }
 </style>
 

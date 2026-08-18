@@ -1,0 +1,439 @@
+<title>撮影のきまり</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700&family=Zen+Old+Mincho:wght@700;900&display=swap">
+
+<style>
+  :root {
+    --paper: #FFFFFF;
+    --ink: #17211C;
+    --ink-2: #4C574F;
+    --ink-3: #79837B;
+    --rule: #D5D9CF;
+    --rule-hard: #A9B0A2;
+    --ai: #1B3A5C;
+    --beni: #A8322C;
+    --moss: #3F6248;
+    --band: #EFF1EB;
+    --font-display: "Zen Old Mincho", "Hiragino Mincho ProN", "Yu Mincho", serif;
+    --font-body: "Zen Kaku Gothic New", "Hiragino Sans", "Yu Gothic", system-ui, sans-serif;
+  }
+
+  @page { size: A4 portrait; margin: 11mm 12mm; }
+
+  * { box-sizing: border-box; }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--font-body);
+    font-feature-settings: "palt" 1;
+    -webkit-font-smoothing: antialiased;
+    margin: 0;
+    padding: 14px;
+    font-size: 12px;
+    line-height: 1.6;
+  }
+
+  .sheet {
+    width: 186mm;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 3.5mm;
+  }
+
+  /* header */
+  .top {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 8px;
+    border-bottom: 3px double var(--rule-hard);
+    padding-bottom: 2mm;
+  }
+  .top h1 {
+    font-family: var(--font-display);
+    font-weight: 900;
+    font-size: 26px;
+    letter-spacing: 0.04em;
+    margin: 0;
+    line-height: 1.2;
+  }
+  .top .sub { font-size: 11px; color: var(--ink-3); letter-spacing: 0.06em; margin-top: 3px; }
+  .top .shop {
+    font-family: var(--font-display);
+    font-size: 12px;
+    color: var(--ai);
+    letter-spacing: 0.1em;
+    white-space: nowrap;
+  }
+
+  /* three rules */
+  .rules { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4mm; }
+  .rule {
+    border: 1px solid var(--rule);
+    border-top: 3px solid var(--ai);
+    padding: 3mm 3mm 3.5mm;
+    display: flex;
+    flex-direction: column;
+    gap: 2mm;
+  }
+  .rule .n {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 12px;
+    color: #FFF;
+    background: var(--ai);
+    width: 20px; height: 20px;
+    display: grid; place-items: center;
+  }
+  .rule h2 {
+    font-family: var(--font-display);
+    font-size: 16px;
+    margin: 0;
+    letter-spacing: 0.03em;
+    line-height: 1.35;
+  }
+  .rule p { margin: 0; font-size: 11px; color: var(--ink-2); line-height: 1.65; }
+  .rule svg { display: block; width: 100%; height: 145px; margin-top: auto; }
+  .rule .t-lbl { font-size: 9px; font-weight: 700; fill: var(--ink); }
+  .rule .t-sm { font-size: 8px; fill: var(--ink-3); }
+  .rule .frame { fill: none; stroke: var(--rule-hard); stroke-width: 1.2; }
+
+  /* checklist */
+  .check-block { border: 1px solid var(--rule); padding: 3.5mm 4mm 4mm; }
+  .check-block h2 {
+    font-family: var(--font-display);
+    font-size: 15px;
+    margin: 0 0 2.5mm;
+    letter-spacing: 0.04em;
+  }
+  .check-block h2 span { font-size: 10px; color: var(--ink-3); font-family: var(--font-body); letter-spacing: 0.06em; margin-left: 6px; }
+  .check {
+    list-style: none; margin: 0; padding: 0;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 0 6mm;
+  }
+  .check li {
+    display: flex; gap: 8px; align-items: flex-start;
+    padding: 1.7mm 0;
+    border-bottom: 1px solid var(--rule);
+    font-size: 12px;
+    line-height: 1.5;
+  }
+  .check li::before {
+    content: ""; flex: 0 0 auto;
+    width: 13px; height: 13px; margin-top: 3px;
+    border: 1.4px solid var(--rule-hard);
+  }
+  .check li b { font-weight: 700; }
+
+  /* ng row */
+  .ng-block { border: 1px solid var(--rule); padding: 3.5mm 4mm 3mm; }
+  .ng-block h2 {
+    font-family: var(--font-display);
+    font-size: 15px; margin: 0 0 2.5mm;
+    letter-spacing: 0.04em;
+  }
+  .ng-block h2 em { font-style: normal; color: var(--beni); }
+  .ng-block svg { display: block; width: 100%; height: 200px; }
+  .ng-block .t-lbl { font-size: 9.5px; font-weight: 700; fill: var(--ink); }
+  .ng-block .t-sm { font-size: 8px; fill: var(--ink-3); }
+  .ng-block .t-tag { font-size: 8px; font-weight: 700; fill: #FFF; }
+  .ng-block .frame { fill: none; stroke: var(--rule-hard); stroke-width: 1.2; }
+
+  /* footer */
+  .foot {
+    display: flex; flex-wrap: wrap; gap: 3mm 6mm;
+    align-items: center;
+    background: var(--band);
+    border-left: 3px solid var(--beni);
+    padding: 3mm 4mm;
+    font-size: 11.5px;
+    line-height: 1.6;
+  }
+  .foot b { color: var(--beni); }
+  .foot .key {
+    font-family: var(--font-display);
+    font-size: 13px;
+    letter-spacing: 0.05em;
+  }
+
+  @media print {
+    body { padding: 0; }
+    .sheet { width: auto; }
+  }
+
+  /* week band */
+  .week { display: grid; grid-template-columns: repeat(4, 1fr); gap: 4mm; }
+  .week div {
+    border: 1px solid var(--rule);
+    border-left: 3px solid var(--moss);
+    padding: 2mm 2.5mm 2.2mm;
+  }
+  .week b {
+    display: block;
+    font-family: var(--font-display);
+    font-size: 14px;
+    color: var(--moss);
+    letter-spacing: 0.06em;
+    margin-bottom: 0.5mm;
+  }
+  .week span { font-size: 11px; color: var(--ink-2); line-height: 1.55; display: block; }
+  .week em { font-style: normal; font-size: 9.5px; color: var(--ink-3); }
+
+  .band-title {
+    font-family: var(--font-display);
+    font-size: 15px;
+    letter-spacing: 0.04em;
+    margin: 0 0 2.5mm;
+  }
+  .band-title span { font-size: 10px; color: var(--ink-3); font-family: var(--font-body); letter-spacing: 0.06em; margin-left: 6px; }
+  .week-block { border: 1px solid var(--rule); padding: 3.5mm 4mm 4mm; }
+
+  @media screen {
+    body { background: #E7E9E3; padding: 20px; }
+    .sheet { background: #FFF; padding: 11mm 12mm; box-shadow: 0 2px 14px rgba(0,0,0,.14); }
+  }
+</style>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+
+    <!-- 引き：花束全体 -->
+    <symbol id="ph-bouquet" viewBox="0 0 120 120" preserveAspectRatio="xMidYMid slice">
+      <rect width="120" height="120" fill="#E8E4DB"/>
+      <rect y="94" width="120" height="26" fill="#D6CFC1"/>
+      <ellipse cx="60" cy="106" rx="30" ry="5" fill="#C6BEAE"/>
+      <path d="M42 68 L78 68 L68 106 L52 106 Z" fill="#CFC7B6"/>
+      <path d="M42 68 L60 76 L78 68 L60 61 Z" fill="#DFD8C9"/>
+      <g stroke="#5E7A52" stroke-width="2.4" stroke-linecap="round" fill="none">
+        <path d="M56 74 L50 52"/><path d="M60 74 L60 46"/><path d="M64 74 L71 54"/>
+      </g>
+      <ellipse cx="41" cy="62" rx="11" ry="4.6" fill="#6E8C5E" transform="rotate(-25 41 62)"/>
+      <ellipse cx="80" cy="64" rx="11" ry="4.6" fill="#6E8C5E" transform="rotate(22 80 64)"/>
+      <circle cx="45" cy="46" r="10" fill="#C0483E"/><circle cx="45" cy="46" r="3.4" fill="#96322C"/>
+      <circle cx="60" cy="35" r="12" fill="#CB5348"/><circle cx="60" cy="35" r="4" fill="#96322C"/>
+      <circle cx="76" cy="47" r="9" fill="#D98CA0"/><circle cx="76" cy="47" r="3" fill="#BB6A7E"/>
+      <circle cx="52" cy="59" r="7.5" fill="#E0B451"/><circle cx="52" cy="59" r="2.6" fill="#BE8F32"/>
+      <circle cx="69" cy="60" r="6.5" fill="#F4F0E7"/><circle cx="69" cy="60" r="2.3" fill="#D5CCB8"/>
+    </symbol>
+
+    <!-- 寄り：花芯のクローズアップ -->
+    <symbol id="ph-bloom" viewBox="0 0 120 120" preserveAspectRatio="xMidYMid slice">
+      <rect width="120" height="120" fill="#E8E4DB"/>
+      <g transform="translate(60,60)">
+        <g fill="#B94239">
+          <ellipse rx="18" ry="31" cy="-23"/>
+          <ellipse rx="18" ry="31" cy="-23" transform="rotate(60)"/>
+          <ellipse rx="18" ry="31" cy="-23" transform="rotate(120)"/>
+          <ellipse rx="18" ry="31" cy="-23" transform="rotate(180)"/>
+          <ellipse rx="18" ry="31" cy="-23" transform="rotate(240)"/>
+          <ellipse rx="18" ry="31" cy="-23" transform="rotate(300)"/>
+        </g>
+        <g fill="#CB5348">
+          <ellipse rx="12" ry="21" cy="-15" transform="rotate(30)"/>
+          <ellipse rx="12" ry="21" cy="-15" transform="rotate(90)"/>
+          <ellipse rx="12" ry="21" cy="-15" transform="rotate(150)"/>
+          <ellipse rx="12" ry="21" cy="-15" transform="rotate(210)"/>
+          <ellipse rx="12" ry="21" cy="-15" transform="rotate(270)"/>
+          <ellipse rx="12" ry="21" cy="-15" transform="rotate(330)"/>
+        </g>
+        <circle r="9.5" fill="#8B2E28"/>
+        <circle r="4" fill="#E0B451"/>
+      </g>
+    </symbol>
+
+    <!-- 使用シーン：玄関に飾った状態 -->
+    <symbol id="ph-vase" viewBox="0 0 120 120" preserveAspectRatio="xMidYMid slice">
+      <rect width="120" height="120" fill="#E8E4DB"/>
+      <rect x="4" y="6" width="34" height="76" fill="#DCD6CA"/>
+      <rect x="4" y="6" width="34" height="76" fill="none" stroke="#CBC3B4" stroke-width="1.5"/>
+      <circle cx="33" cy="46" r="2" fill="#B6AC99"/>
+      <rect y="82" width="120" height="38" fill="#CFC7B7"/>
+      <rect y="80" width="120" height="3" fill="#B9AF9C"/>
+      <ellipse cx="66" cy="97" rx="20" ry="4" fill="#BBB1A0"/>
+      <path d="M56 62 L78 62 L74 96 L60 96 Z" fill="#AEBCBE"/>
+      <path d="M56 62 L78 62 L77 68 L57 68 Z" fill="#C4D0D2"/>
+      <g stroke="#5E7A52" stroke-width="2.2" stroke-linecap="round" fill="none">
+        <path d="M64 64 L58 42"/><path d="M67 64 L68 38"/><path d="M70 64 L78 46"/>
+      </g>
+      <ellipse cx="54" cy="52" rx="9" ry="4" fill="#6E8C5E" transform="rotate(-25 54 52)"/>
+      <circle cx="56" cy="38" r="8.5" fill="#C0483E"/><circle cx="56" cy="38" r="3" fill="#96322C"/>
+      <circle cx="68" cy="30" r="10" fill="#CB5348"/><circle cx="68" cy="30" r="3.4" fill="#96322C"/>
+      <circle cx="80" cy="42" r="7.5" fill="#D98CA0"/><circle cx="80" cy="42" r="2.6" fill="#BB6A7E"/>
+      <circle cx="62" cy="50" r="6" fill="#E0B451"/><circle cx="62" cy="50" r="2.2" fill="#BE8F32"/>
+    </symbol>
+
+    <!-- ブランディング：作業台の手元 -->
+    <symbol id="ph-hands" viewBox="0 0 120 120" preserveAspectRatio="xMidYMid slice">
+      <rect width="120" height="120" fill="#DED8CC"/>
+      <rect y="48" width="120" height="72" fill="#9C7F5E"/>
+      <g stroke="#8A6F51" stroke-width="1.6" fill="none">
+        <path d="M0 66 H120"/><path d="M0 88 H120"/><path d="M0 108 H120"/>
+      </g>
+      <g stroke="#5E7A52" stroke-width="2.8" stroke-linecap="round" fill="none">
+        <path d="M28 94 L66 56"/><path d="M36 99 L74 60"/><path d="M44 103 L80 66"/>
+      </g>
+      <ellipse cx="55" cy="76" rx="9" ry="4" fill="#6E8C5E" transform="rotate(-42 55 76)"/>
+      <circle cx="68" cy="52" r="9" fill="#C0483E"/><circle cx="68" cy="52" r="3" fill="#96322C"/>
+      <circle cx="79" cy="58" r="7" fill="#E0B451"/>
+      <circle cx="85" cy="67" r="6" fill="#F4F0E7"/>
+      <g transform="translate(36,97) rotate(-40)">
+        <rect x="-27" y="-10" width="15" height="20" rx="5" fill="#4E5A68"/>
+        <rect x="-16" y="-12" width="30" height="24" rx="12" fill="#EDCBAB"/>
+        <rect x="4" y="-13" width="21" height="7.5" rx="3.7" fill="#F0D2B4"/>
+        <rect x="6" y="-4.5" width="23" height="7.5" rx="3.7" fill="#EDCBAB"/>
+        <rect x="5" y="4" width="20" height="7.5" rx="3.7" fill="#E7C2A0"/>
+        <rect x="-10" y="9" width="17" height="7.5" rx="3.7" fill="#E2BB99"/>
+      </g>
+      <g transform="translate(97,103) rotate(-20)">
+        <rect x="-15" y="-2" width="31" height="4" rx="2" fill="#7B7F82"/>
+        <circle cx="-18" cy="-5.5" r="5" fill="none" stroke="#5E6367" stroke-width="2.4"/>
+        <circle cx="-18" cy="6.5" r="5" fill="none" stroke="#5E6367" stroke-width="2.4"/>
+      </g>
+    </symbol>
+
+  </defs>
+</svg>
+
+<div class="sheet">
+
+  <div class="top">
+    <div>
+      <h1>撮影のきまり</h1>
+      <div class="sub">この3つと下のチェックだけ守れば、写真は揃います</div>
+    </div>
+    <div class="shop">池田生花店</div>
+  </div>
+
+  <div class="rules">
+
+    <div class="rule">
+      <div class="n">1</div>
+      <h2>窓の光で撮る</h2>
+      <p>照明は消す。直射日光とフラッシュは使わない。午前9〜11時がいちばん安定します。</p>
+      <svg viewBox="0 0 200 120" role="img" aria-label="窓・花・レフ板・スマホの配置">
+        <defs>
+          <marker id="cA" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+            <path d="M0 0 L10 5 L0 10 Z" fill="#C8992F"/>
+          </marker>
+        </defs>
+        <rect x="1" y="1" width="198" height="106" fill="#F2F3EF" stroke="var(--rule)"/>
+        <rect x="12" y="26" width="7" height="56" fill="#AEBCBE" stroke="#8A9A9C"/>
+        <text class="t-sm" x="10" y="20">窓</text>
+        <g stroke="#C8992F" stroke-width="1.5" marker-end="url(#cA)" fill="none">
+          <path d="M24 40 H66"/><path d="M24 56 H66"/><path d="M24 72 H66"/>
+        </g>
+        <use href="#ph-bouquet" x="72" y="28" width="52" height="52"/>
+        <rect class="frame" x="72" y="28" width="52" height="52"/>
+        <g transform="rotate(-14 152 55)">
+          <rect x="148" y="30" width="8" height="50" fill="#F9F7F1" stroke="#B9AF9C"/>
+        </g>
+        <text class="t-sm" x="152" y="24" text-anchor="middle">白い紙</text>
+        <rect x="83" y="88" width="28" height="18" rx="3" fill="#3B423C"/>
+        <circle cx="97" cy="97" r="4" fill="#8FB4DA"/>
+        <text class="t-sm" x="116" y="100">スマホ</text>
+      </svg>
+    </div>
+
+    <div class="rule">
+      <div class="n">2</div>
+      <h2>縦 4:5 で撮る</h2>
+      <p>カメラの設定を4:5に変えて固定。正方形より画面に大きく出ます。動画は9:16。</p>
+      <svg viewBox="0 0 200 120" role="img" aria-label="1対1と4対5の比較">
+        <rect x="26" y="6" width="60" height="108" rx="8" fill="#F2F3EF" stroke="var(--rule-hard)"/>
+        <use href="#ph-bouquet" x="31" y="35" width="50" height="50"/>
+        <rect class="frame" x="31" y="35" width="50" height="50"/>
+        <text class="t-lbl" x="56" y="106" text-anchor="middle">1:1</text>
+        <rect x="114" y="6" width="60" height="108" rx="8" fill="#F2F3EF" stroke="#1B3A5C" stroke-width="2"/>
+        <use href="#ph-bouquet" x="119" y="24" width="50" height="62"/>
+        <rect class="frame" x="119" y="24" width="50" height="62"/>
+        <rect x="114" y="94" width="60" height="14" fill="#1B3A5C"/>
+        <text x="144" y="104" text-anchor="middle" font-size="8" font-weight="700" fill="#FFF">4:5 が広い</text>
+      </svg>
+    </div>
+
+    <div class="rule">
+      <div class="n">3</div>
+      <h2>3枚セットで撮る</h2>
+      <p>お渡し・お届けの前に30秒。作った本人が、この3枚を必ず残します。</p>
+      <svg viewBox="0 0 200 120" role="img" aria-label="寄り・引き・使用シーンの3枚">
+        <use href="#ph-bloom" x="4" y="6" width="60" height="75"/>
+        <rect class="frame" x="4" y="6" width="60" height="75"/>
+        <text class="t-lbl" x="34" y="94" text-anchor="middle">寄り</text>
+        <use href="#ph-bouquet" x="70" y="6" width="60" height="75"/>
+        <rect class="frame" x="70" y="6" width="60" height="75"/>
+        <text class="t-lbl" x="100" y="94" text-anchor="middle">引き</text>
+        <use href="#ph-vase" x="136" y="6" width="60" height="75"/>
+        <rect class="frame" x="136" y="6" width="60" height="75"/>
+        <text class="t-lbl" x="166" y="94" text-anchor="middle">飾った状態</text>
+        <text class="t-sm" x="100" y="112" text-anchor="middle">この3枚で1投稿分の素材になります</text>
+      </svg>
+    </div>
+
+  </div>
+
+  <div class="check-block">
+    <h2>撮る前のチェック<span>シャッターを切る前に、ここだけ見る</span></h2>
+    <ul class="check">
+      <li><b>照明を消した</b>か（窓の光だけ）</li>
+      <li>縦<b>4:5</b>になっているか</li>
+      <li>背景に<b>段ボール・レジ・私物</b>が写っていないか</li>
+      <li><b>寄り・引き・飾った状態</b>の3枚を撮ったか</li>
+      <li>花の色が<b>実物と同じ</b>に見えるか</li>
+      <li><b>大きさが分かるもの</b>（手・玄関）が写っているか</li>
+    </ul>
+  </div>
+
+  <div class="ng-block">
+    <h2>この3つが<em>いちばん多い失敗</em></h2>
+    <svg viewBox="0 0 480 128" role="img" aria-label="適正・白飛び・彩度過多・色かぶりの比較">
+      <g>
+        <use href="#ph-bouquet" x="8" y="4" width="104" height="86"/>
+        <rect class="frame" x="8" y="4" width="104" height="86"/>
+        <rect x="8" y="4" width="28" height="15" fill="#3F6248"/>
+        <text class="t-tag" x="22" y="15" text-anchor="middle">OK</text>
+        <text class="t-lbl" x="60" y="106" text-anchor="middle">適正</text>
+        <text class="t-sm" x="60" y="120" text-anchor="middle">窓の光・加工は最小限</text>
+      </g>
+      <g>
+        <use href="#ph-bouquet" x="128" y="4" width="104" height="86" style="filter:brightness(1.75) contrast(0.72)"/>
+        <rect class="frame" x="128" y="4" width="104" height="86"/>
+        <rect x="128" y="4" width="28" height="15" fill="#A8322C"/>
+        <text class="t-tag" x="142" y="15" text-anchor="middle">NG</text>
+        <text class="t-lbl" x="180" y="106" text-anchor="middle">白飛び</text>
+        <text class="t-sm" x="180" y="120" text-anchor="middle">直射日光・フラッシュ</text>
+      </g>
+      <g>
+        <use href="#ph-bouquet" x="248" y="4" width="104" height="86" style="filter:saturate(3.4)"/>
+        <rect class="frame" x="248" y="4" width="104" height="86"/>
+        <rect x="248" y="4" width="28" height="15" fill="#A8322C"/>
+        <text class="t-tag" x="262" y="15" text-anchor="middle">NG</text>
+        <text class="t-lbl" x="300" y="106" text-anchor="middle">彩度の上げすぎ</text>
+        <text class="t-sm" x="300" y="120" text-anchor="middle">実物と違う＝クレーム</text>
+      </g>
+      <g>
+        <use href="#ph-bouquet" x="368" y="4" width="104" height="86" style="filter:sepia(0.55) hue-rotate(18deg) saturate(1.4)"/>
+        <rect class="frame" x="368" y="4" width="104" height="86"/>
+        <rect x="368" y="4" width="28" height="15" fill="#A8322C"/>
+        <text class="t-tag" x="382" y="15" text-anchor="middle">NG</text>
+        <text class="t-lbl" x="420" y="106" text-anchor="middle">色かぶり</text>
+        <text class="t-sm" x="420" y="120" text-anchor="middle">蛍光灯と外光が混ざった</text>
+      </g>
+    </svg>
+  </div>
+
+  <div class="week">
+    <div><b>月</b><span>お手入れ・飾り方</span><em>説明写真／フィード5枚</em></div>
+    <div><b>水</b><span>仕入れ・作業場</span><em>ブランディング／リール</em></div>
+    <div><b>金</b><span>今週のおすすめ</span><em>商品写真／フィード3枚</em></div>
+    <div><b>毎日</b><span>入荷・配達・店先</span><em>ストーリーズ1本</em></div>
+  </div>
+
+  <div class="foot">
+    <span class="key">撮ったら、共有フォルダに「日付＋テーマ」で保存</span>
+    <span>お客様が写る写真は、<b>必ず口頭で掲載の許可</b>をいただく。顔出しの可否も確認する。</span>
+  </div>
+
+</div>
