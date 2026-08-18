@@ -602,6 +602,7 @@
   .fig .t-lbl { font-size: 11px; font-weight: 700; fill: var(--ink); }
   .fig .t-sm { font-size: 9.5px; fill: var(--ink-3); }
   .fig .t-tag { font-size: 9px; font-weight: 700; fill: #FFFFFF; letter-spacing: 0.04em; }
+  .fig .t-disp { font-family: var(--font-display); }
   .fig .frame { fill: none; stroke: var(--rule-hard); stroke-width: 1.5; }
   .fig .guide { stroke: var(--ink-3); stroke-width: 1; fill: none; }
   .fig .dash { stroke: var(--ink-3); stroke-width: 1; stroke-dasharray: 4 3; fill: none; }
@@ -1108,6 +1109,51 @@
         <figcaption><b>図3｜1つの商品につき、必ずこの3枚</b><br>①で手を止めさせ、②で商品を正確に伝え、③で「わが家に置いたら」を想像させます。この3枚が揃うと、1回の作業から<b>1投稿分の素材</b>ができあがります。</figcaption>
       </figure>
 
+      <figure>
+        <div class="fig-frame">
+          <svg class="fig" viewBox="0 0 480 312" role="img" aria-label="写真の3つの役割を花に置き換えた見本">
+
+            <!-- 役割の見出し -->
+            <path d="M8 16 H138 L168 72 L138 128 H8 Z" fill="#1B3A5C"/>
+            <text x="76" y="52" text-anchor="middle" font-size="9" fill="#C9D8E8">お客様が購入に至るまで</text>
+            <text x="76" y="65" text-anchor="middle" font-size="8" fill="#C9D8E8">（カスタマージャーニー）における</text>
+            <text x="76" y="97" text-anchor="middle" font-size="19" font-weight="700" fill="#FFFFFF" class="t-disp">写真の役割</text>
+
+            <text x="196" y="34" font-size="13.5" font-weight="700" fill="#1B3A5C">① ブランディング写真</text>
+            <text class="t-sm" x="210" y="50">店の世界観や価値を、視覚的に伝える写真</text>
+            <text x="196" y="79" font-size="13.5" font-weight="700" fill="#1B3A5C">② 商品写真</text>
+            <text class="t-sm" x="210" y="95">商品の特徴や魅力を、正確に見せる写真</text>
+            <text x="196" y="124" font-size="13.5" font-weight="700" fill="#1B3A5C">③ 説明写真</text>
+            <text class="t-sm" x="210" y="140">使い方や大きさを、具体的に示す写真</text>
+
+            <path class="dash" d="M8 152 H472"/>
+
+            <!-- 3枚の見本 -->
+            <use href="#ph-hands" x="10" y="166" width="145" height="110"/>
+            <rect class="frame" x="10" y="166" width="145" height="110"/>
+            <rect x="10" y="166" width="26" height="18" fill="#1B3A5C"/>
+            <text class="t-tag" x="23" y="179" text-anchor="middle">1</text>
+            <text class="t-lbl" x="82" y="292" text-anchor="middle">ブランディング写真</text>
+            <text class="t-sm" x="82" y="304" text-anchor="middle">朝の作業場・仕入れ・店先</text>
+
+            <use href="#ph-bouquet" x="168" y="166" width="145" height="110"/>
+            <rect class="frame" x="168" y="166" width="145" height="110"/>
+            <rect x="168" y="166" width="26" height="18" fill="#1B3A5C"/>
+            <text class="t-tag" x="181" y="179" text-anchor="middle">2</text>
+            <text class="t-lbl" x="240" y="292" text-anchor="middle">商品写真</text>
+            <text class="t-sm" x="240" y="304" text-anchor="middle">白背景で、色を正確に</text>
+
+            <use href="#ph-vase" x="326" y="166" width="145" height="110"/>
+            <rect class="frame" x="326" y="166" width="145" height="110"/>
+            <rect x="326" y="166" width="26" height="18" fill="#1B3A5C"/>
+            <text class="t-tag" x="339" y="179" text-anchor="middle">3</text>
+            <text class="t-lbl" x="398" y="292" text-anchor="middle">説明写真</text>
+            <text class="t-sm" x="398" y="304" text-anchor="middle">玄関に飾った状態・大きさ</text>
+          </svg>
+        </div>
+        <figcaption><b>図4｜3つの役割の見本（同じ日の仕事から、3枚とも撮れます）</b><br>セミナー資料ではおせちの写真で説明されていた3つの役割を、そのまま当店の花に置き換えたものです。<b>1つの花束を作る作業のなかで、この3枚は全部撮れます</b>。①は組んでいる最中、②は完成直後、③はお届け先か店の玄関先。わざわざ撮影日を設ける必要はありません。</figcaption>
+      </figure>
+
       <h4>細かいが効くこと</h4>
       <ul>
         <li><strong>縦4:5で撮る。</strong>正方形よりフィードの占有面積が広く、目に留まりやすい。リールは9:16。</li>
@@ -1151,7 +1197,7 @@
             <text class="t-lbl" x="385" y="236" text-anchor="middle">9:16　リール</text>
           </svg>
         </div>
-        <figcaption><b>図4｜縦で撮るだけで、見られる面積が変わる</b><br>同じ写真でも、4:5の縦にすると画面に占める面積が約1.25倍になります。指を止めてもらえる時間が長くなるぶん、そのまま反応の差になります。<b>スマホのカメラ設定を4:5に変えて固定</b>してください。リール（動画）は9:16の全画面です。</figcaption>
+        <figcaption><b>図5｜縦で撮るだけで、見られる面積が変わる</b><br>同じ写真でも、4:5の縦にすると画面に占める面積が約1.25倍になります。指を止めてもらえる時間が長くなるぶん、そのまま反応の差になります。<b>スマホのカメラ設定を4:5に変えて固定</b>してください。リール（動画）は9:16の全画面です。</figcaption>
       </figure>
 
       <div class="dd">
@@ -1225,7 +1271,7 @@
             <text class="t-sm" x="360" y="232" text-anchor="middle">主役が埋もれ、店の印象まで下がる</text>
           </svg>
         </div>
-        <figcaption><b>図5｜同じ花束でも、背景と余白で別物になる</b><br>右は花そのものは同じです。<b>背景に写り込んだ段ボールとバケツ</b>だけで、「忙しそうな店」「雑な店」という印象に変わってしまいます。撮る前に、画面の四隅を見る癖をつけてください。</figcaption>
+        <figcaption><b>図6｜同じ花束でも、背景と余白で別物になる</b><br>右は花そのものは同じです。<b>背景に写り込んだ段ボールとバケツ</b>だけで、「忙しそうな店」「雑な店」という印象に変わってしまいます。撮る前に、画面の四隅を見る癖をつけてください。</figcaption>
       </figure>
 
       <figure>
@@ -1265,7 +1311,7 @@
             </g>
           </svg>
         </div>
-        <figcaption><b>図6｜この3つが、花屋でいちばん多い失敗</b><br>とくに右端の<b>色かぶり</b>は気づきにくい失敗です。撮るときに近くの照明を消すだけで防げます。白い花を撮って白く写らなければ、色かぶりを疑ってください。</figcaption>
+        <figcaption><b>図7｜この3つが、花屋でいちばん多い失敗</b><br>とくに右端の<b>色かぶり</b>は気づきにくい失敗です。撮るときに近くの照明を消すだけで防げます。白い花を撮って白く写らなければ、色かぶりを疑ってください。</figcaption>
       </figure>
 
       <h4>撮影前チェックリスト（印刷して作業台に貼る）</h4>
@@ -1364,7 +1410,7 @@
             </g>
           </svg>
         </div>
-        <figcaption><b>図7｜カルーセル（複数枚投稿）の並べ方</b><br>1枚目に<b>お客様の心の声</b>を文字で置くのが最大のポイントです。「これ、私のことだ」と思った人だけが2枚目をめくり、めくられた投稿はInstagramが「良い投稿」と判断して他の人にも表示します。最後の案内は<b>1つだけ</b>にしてください。</figcaption>
+        <figcaption><b>図8｜カルーセル（複数枚投稿）の並べ方</b><br>1枚目に<b>お客様の心の声</b>を文字で置くのが最大のポイントです。「これ、私のことだ」と思った人だけが2枚目をめくり、めくられた投稿はInstagramが「良い投稿」と判断して他の人にも表示します。最後の案内は<b>1つだけ</b>にしてください。</figcaption>
       </figure>
 
       <h3>キャプションの決まりごと</h3>
@@ -1484,7 +1530,7 @@
             <text class="t-sm" x="224" y="192">今は「商品写真」が9枚中7〜8枚。ここを入れ替える。</text>
           </svg>
         </div>
-        <figcaption><b>図8｜プロフィールを開いた瞬間に見えるのは、この9マス</b><br>投稿を見て「気になる」と思った人が次にするのは、プロフィールを開くことです。そこで<b>店の空気が伝わるかどうか</b>でフォローが決まります。9枚のうち4枚をブランディング写真にするだけで、見え方が変わります。</figcaption>
+        <figcaption><b>図9｜プロフィールを開いた瞬間に見えるのは、この9マス</b><br>投稿を見て「気になる」と思った人が次にするのは、プロフィールを開くことです。そこで<b>店の空気が伝わるかどうか</b>でフォローが決まります。9枚のうち4枚をブランディング写真にするだけで、見え方が変わります。</figcaption>
       </figure>
 
       <h3>週3投稿＋毎日ストーリーズ</h3>
