@@ -1,0 +1,616 @@
+<title>中津市 花屋 検索順位調査</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@600;700;900&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+
+<style>
+:root{
+  --ground:#F6F8F5;
+  --surface:#FFFFFF;
+  --surface-2:#EEF2EE;
+  --ink:#1B2321;
+  --ink-2:#4A544F;
+  --ink-3:#7A857F;
+  --rule:#DCE3DD;
+  --rule-strong:#C2CCC4;
+  --accent:#17614A;
+  --accent-soft:#E2EFE8;
+  --subject:#8C3A4A;
+  --subject-soft:#F6EAEC;
+  --warn:#9A5A1F;
+  --warn-soft:#F7EDE0;
+  --shadow:0 1px 2px rgba(27,35,33,.06), 0 8px 24px rgba(27,35,33,.05);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --ground:#111614;
+    --surface:#181E1B;
+    --surface-2:#1F2622;
+    --ink:#E7EBE7;
+    --ink-2:#AFB9B3;
+    --ink-3:#8A948E;
+    --rule:#2A322D;
+    --rule-strong:#3B443E;
+    --accent:#5CB394;
+    --accent-soft:#16302A;
+    --subject:#DE8C99;
+    --subject-soft:#332125;
+    --warn:#D6A05F;
+    --warn-soft:#2E2519;
+    --shadow:0 1px 2px rgba(0,0,0,.4), 0 8px 24px rgba(0,0,0,.28);
+  }
+}
+:root[data-theme="dark"]{
+  --ground:#111614;
+  --surface:#181E1B;
+  --surface-2:#1F2622;
+  --ink:#E7EBE7;
+  --ink-2:#AFB9B3;
+  --ink-3:#8A948E;
+  --rule:#2A322D;
+  --rule-strong:#3B443E;
+  --accent:#5CB394;
+  --accent-soft:#16302A;
+  --subject:#DE8C99;
+  --subject-soft:#332125;
+  --warn:#D6A05F;
+  --warn-soft:#2E2519;
+  --shadow:0 1px 2px rgba(0,0,0,.4), 0 8px 24px rgba(0,0,0,.28);
+}
+
+*{box-sizing:border-box}
+body{
+  background:var(--ground);
+  color:var(--ink);
+  font-family:"Zen Kaku Gothic New","Hiragino Kaku Gothic ProN","Yu Gothic",system-ui,sans-serif;
+  font-size:15px;
+  line-height:1.85;
+  -webkit-font-smoothing:antialiased;
+  padding:0 20px 80px;
+}
+.wrap{max-width:1060px;margin:0 auto;display:flex;flex-direction:column;gap:52px}
+
+/* ---------- masthead ---------- */
+.masthead{padding-top:56px;display:flex;flex-direction:column;gap:22px}
+.eyebrow{
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:11px;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--accent);font-weight:600;
+}
+h1{
+  font-family:"Zen Old Mincho",serif;font-weight:900;
+  font-size:clamp(30px,5.2vw,46px);line-height:1.28;letter-spacing:.01em;
+  text-wrap:balance;margin:0;
+}
+.lede{color:var(--ink-2);max-width:60ch;font-size:15px;margin:0}
+
+.meta{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));
+  gap:1px;background:var(--rule);border:1px solid var(--rule);border-radius:3px;overflow:hidden;
+}
+.meta div{background:var(--surface);padding:12px 15px}
+.meta dt{
+  font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--ink-3);margin:0 0 3px;
+}
+.meta dd{margin:0;font-size:13.5px;font-weight:500;line-height:1.5}
+
+/* ---------- callout ---------- */
+.callout{
+  background:var(--warn-soft);border:1px solid var(--rule-strong);
+  border-left:4px solid var(--warn);border-radius:3px;padding:20px 24px;
+  display:flex;flex-direction:column;gap:12px;
+}
+.callout h2{
+  font-family:"Zen Old Mincho",serif;font-size:17px;font-weight:700;margin:0;color:var(--warn);
+}
+.callout p{margin:0;font-size:14px;color:var(--ink-2)}
+.callout strong{color:var(--ink)}
+
+.note{
+  border-left:3px solid var(--accent);background:var(--accent-soft);
+  padding:14px 18px;border-radius:0 3px 3px 0;font-size:13.5px;color:var(--ink-2);
+}
+.note strong{color:var(--ink)}
+.note--subject{border-left-color:var(--subject);background:var(--subject-soft)}
+
+/* ---------- sections ---------- */
+section{display:flex;flex-direction:column;gap:18px}
+.sec-head{display:flex;flex-direction:column;gap:6px;border-bottom:2px solid var(--ink);padding-bottom:10px}
+.sec-num{
+  font-family:"IBM Plex Mono",monospace;font-size:11px;font-weight:600;
+  letter-spacing:.16em;color:var(--accent);
+}
+h2.sec-title{font-family:"Zen Old Mincho",serif;font-size:23px;font-weight:700;margin:0;line-height:1.4}
+h3{
+  font-family:"Zen Kaku Gothic New",sans-serif;font-size:14px;font-weight:700;margin:14px 0 0;
+  letter-spacing:.02em;color:var(--ink);
+  display:flex;align-items:center;gap:9px;
+}
+h3::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--accent);flex:none}
+.sub{font-size:13px;color:var(--ink-3);margin:0}
+
+/* ---------- tables ---------- */
+.tw{overflow-x:auto;border:1px solid var(--rule);border-radius:3px;background:var(--surface);box-shadow:var(--shadow)}
+table{border-collapse:collapse;width:100%;min-width:640px;font-size:13.5px}
+thead th{
+  background:var(--surface-2);text-align:left;vertical-align:bottom;
+  font-size:11px;letter-spacing:.09em;font-weight:700;color:var(--ink-2);
+  padding:11px 14px;border-bottom:1.5px solid var(--rule-strong);white-space:nowrap;
+}
+tbody td{padding:12px 14px;border-bottom:1px solid var(--rule);vertical-align:top;line-height:1.7}
+tbody tr:last-child td{border-bottom:0}
+tbody tr.subject{background:var(--subject-soft)}
+tbody tr.subject td:first-child{box-shadow:inset 3px 0 0 var(--subject)}
+.shop{font-weight:700;white-space:nowrap}
+tr.subject .shop{color:var(--subject)}
+.num{font-family:"IBM Plex Mono",monospace;font-variant-numeric:tabular-nums;white-space:nowrap}
+td.rank{
+  font-family:"IBM Plex Mono",monospace;font-variant-numeric:tabular-nums;
+  font-size:16px;font-weight:600;text-align:center;width:56px;color:var(--accent);
+}
+tr.subject td.rank{color:var(--subject)}
+td.out{color:var(--ink-3);font-weight:400}
+.addr{font-family:"IBM Plex Mono",monospace;font-size:12px;font-variant-numeric:tabular-nums;color:var(--ink-2);white-space:nowrap}
+a{color:var(--accent);text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 35%,transparent);word-break:break-all}
+a:hover{border-bottom-color:var(--accent)}
+a:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:2px}
+.url{font-family:"IBM Plex Mono",monospace;font-size:11.5px}
+.desc{color:var(--ink-2);font-size:12.5px;line-height:1.65;min-width:200px}
+.dash{color:var(--ink-3)}
+
+.chip{
+  display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:10.5px;font-weight:600;
+  letter-spacing:.06em;padding:2px 7px;border-radius:2px;white-space:nowrap;
+  border:1px solid var(--rule-strong);color:var(--ink-2);background:var(--surface-2);
+}
+.chip.best{color:var(--warn);border-color:var(--warn);background:var(--warn-soft)}
+.chip.own{color:var(--subject);border-color:var(--subject);background:var(--subject-soft)}
+
+/* priority */
+td.pri{width:52px;text-align:center;font-family:"IBM Plex Mono",monospace;font-weight:600;font-size:13px;white-space:nowrap}
+tr.p0 td:first-child{box-shadow:inset 4px 0 0 var(--subject)}
+tr.p0 td.pri{color:var(--subject)}
+tr.p1 td:first-child{box-shadow:inset 4px 0 0 var(--accent)}
+tr.p1 td.pri{color:var(--accent)}
+tr.p2 td:first-child{box-shadow:inset 4px 0 0 var(--rule-strong)}
+tr.p2 td.pri{color:var(--ink-3)}
+.act{font-weight:700;line-height:1.6;min-width:150px}
+ul.tight{margin:0;padding-left:1.05em}
+ul.tight li{margin:2px 0}
+
+/* excluded */
+.excl{font-size:12px;color:var(--ink-3);display:flex;flex-wrap:wrap;gap:6px;align-items:baseline}
+.excl b{font-weight:700;color:var(--ink-2);font-size:11px;letter-spacing:.06em}
+.excl span{
+  font-family:"IBM Plex Mono",monospace;font-size:10.5px;padding:1px 6px;
+  border:1px dashed var(--rule-strong);border-radius:2px;color:var(--ink-3);
+}
+
+/* sources */
+.sources{display:flex;flex-wrap:wrap;gap:8px}
+.sources a{
+  font-family:"IBM Plex Mono",monospace;font-size:11.5px;padding:5px 10px;
+  border:1px solid var(--rule);border-radius:2px;background:var(--surface);
+  color:var(--ink-2);border-bottom:1px solid var(--rule);
+}
+.sources a:hover{border-color:var(--accent);color:var(--accent)}
+footer{border-top:1px solid var(--rule);padding-top:20px;color:var(--ink-3);font-size:12px}
+
+@media (max-width:640px){
+  body{padding:0 14px 60px}
+  .wrap{gap:40px}
+  .masthead{padding-top:36px}
+}
+
+/* ================= 印刷用 ================= */
+@page{ size:A4 portrait; margin:14mm 11mm 15mm; }
+
+@media print{
+  /* 画面テーマに関係なく、印刷は必ず白地・黒文字に固定する */
+  :root,
+  :root[data-theme="dark"],
+  :root[data-theme="light"],
+  :root:not([data-theme="light"]){
+    --ground:#FFFFFF;
+    --surface:#FFFFFF;
+    --surface-2:#F0F2F0;
+    --ink:#111614;
+    --ink-2:#3C4642;
+    --ink-3:#6B7570;
+    --rule:#C8CFC9;
+    --rule-strong:#98A29B;
+    --accent:#11543F;
+    --accent-soft:#EAF2EE;
+    --subject:#7A2E3D;
+    --subject-soft:#F7EDEF;
+    --warn:#7E4715;
+    --warn-soft:#F8F1E7;
+    --shadow:none;
+  }
+
+  /* 背景色・罫線色をプリンタでも保持（自社行の色分けと優先度ストライプが意味を持つため） */
+  *{ -webkit-print-color-adjust:exact !important; print-color-adjust:exact !important; }
+
+  body{
+    background:#fff;
+    padding:0;
+    font-size:9pt;
+    line-height:1.6;
+  }
+  .wrap{ max-width:none; gap:0; }
+
+  /* --- 見出し・扉 --- */
+  .masthead{ padding-top:0; gap:12px; }
+  h1{ font-size:20pt; line-height:1.35; }
+  .lede{ font-size:9.5pt; max-width:none; }
+  .eyebrow{ font-size:7.5pt; }
+  .meta{ break-inside:avoid; }
+  .meta dt{ font-size:6.5pt; }
+  .meta dd{ font-size:8.5pt; }
+
+  .callout{ margin-top:10mm; break-inside:avoid; }
+  .callout h2{ font-size:11pt; }
+  .callout p{ font-size:8.5pt; }
+  .note{ font-size:8.5pt; padding:8px 12px; break-inside:avoid; }
+
+  /* --- セクションは改ページで始める --- */
+  section{ break-before:page; gap:10px; padding-top:2mm; }
+  .sec-head{ break-after:avoid; padding-bottom:6px; }
+  .sec-num{ font-size:7.5pt; }
+  h2.sec-title{ font-size:14pt; }
+  h3{ font-size:9.5pt; margin-top:8px; break-after:avoid; }
+  .sub{ font-size:8.5pt; }
+  .excl{ font-size:8pt; }
+  .excl span{ font-size:7pt; }
+
+  /* --- 表：横スクロールを解除し、紙幅に収める --- */
+  .tw{ overflow:visible; box-shadow:none; border:1px solid var(--rule-strong); break-inside:auto; }
+  table{ min-width:0 !important; width:100% !important; table-layout:fixed; font-size:8pt; }
+  thead{ display:table-header-group; }   /* 表が改ページしても見出し行を各ページに繰り返す */
+  tfoot{ display:table-footer-group; }
+  tr{ break-inside:avoid; break-after:auto; }
+  thead th{ font-size:7pt; padding:6px 7px; }
+  tbody td{ padding:6px 7px; line-height:1.55; }
+  td.rank{ font-size:11pt; width:34px; }
+  td.pri{ width:34px; font-size:9pt; }
+  .desc{ font-size:7.5pt; min-width:0; line-height:1.5; }
+  .addr{ font-size:7.5pt; white-space:normal; }
+  .url{ font-size:6.8pt; word-break:break-all; }
+  .shop{ white-space:normal; }
+  .chip{ font-size:6.5pt; padding:1px 4px; }
+  ul.tight{ padding-left:.9em; }
+
+  /* リンクは黒文字＋下線に（URLは本文中に表示済みのため展開しない） */
+  a{ color:var(--ink) !important; border-bottom:1px solid var(--rule-strong); }
+
+  /* --- 参照ソース --- */
+  footer{ break-before:page; padding-top:0; }
+  .sources a{ font-size:7.5pt; padding:3px 7px; }
+}
+</style>
+
+<div class="wrap">
+
+  <header class="masthead">
+    <p class="eyebrow">Local SERP Research — 池田生花店</p>
+    <h1>中津市の花屋、検索順位はいま<br>どうなっているか</h1>
+    <p class="lede">「中津市 花屋」「中津市 花束」「中津市 花屋 おすすめ」の3キーワードについて、マップ枠と自然検索を分けて集計し、池田生花店と競合との差を分析したレポートです。</p>
+    <dl class="meta">
+      <div><dt>調査日時</dt><dd class="num">2026-08-22 15:33 JST</dd></div>
+      <div><dt>検索地点</dt><dd>米国オハイオ州コロンバス</dd></div>
+      <div><dt>検索環境</dt><dd>未ログイン・履歴なし<br>（完全に非パーソナライズ）</dd></div>
+      <div><dt>対象キーワード</dt><dd>花屋 ／ 花束 ／ 花屋 おすすめ</dd></div>
+    </dl>
+  </header>
+
+  <div class="callout">
+    <h2>⚠ 数値をご覧いただく前の前提</h2>
+    <p>本レポートは<strong>中津市から google.co.jp を直接検索した結果ではありません。</strong>実行環境が米国のデータセンターにあり、Google日本版・Googleマップに直接アクセスできないためです。取得できなかったものは次の3点です。</p>
+    <div class="tw" style="box-shadow:none">
+      <table style="min-width:520px">
+        <thead><tr><th style="width:34%">項目</th><th>状況</th></tr></thead>
+        <tbody>
+          <tr><td class="shop">マップ枠の順位</td><td><strong>原理的に取得不可。</strong>検索者の現在地で数百m単位で変動するため、米国からは再現できません。</td></tr>
+          <tr><td class="shop">Google口コミ・評価</td><td><strong>取得不可。</strong>代替として<strong>エキテンの数値</strong>を掲載しています（Googleの数値ではありません）。</td></tr>
+          <tr><td class="shop">自然検索の順位</td><td>非パーソナライズのWeb検索インデックスによる<strong>近似値</strong>。相対的な強弱の把握には使えますが、絶対順位としては使えません。</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>正確な数値が必要な場合は、中津市内のシークレットウィンドウで <span class="chip">?q=中津市+花屋&amp;pws=0&amp;gl=jp&amp;hl=ja</span> を実行し、月1回・同曜日同時刻で実測してください。</p>
+  </div>
+
+  <!-- ============ 1 ============ -->
+  <section>
+    <div class="sec-head">
+      <span class="sec-num">SECTION 01</span>
+      <h2 class="sec-title">Googleマップ（店舗検索結果）</h2>
+    </div>
+    <p class="sub">順位は取得できないため、マップ枠に出現しうる<strong>候補リスト</strong>としてまとめています。評価・口コミ件数はすべて<strong>エキテン</strong>の値です。</p>
+    <div class="tw">
+      <table style="min-width:900px">
+        <thead>
+          <tr><th>店舗名</th><th>公式サイト／公式店舗情報</th><th>所在地</th><th>エキテン評価／件数</th><th>主な説明</th></tr>
+        </thead>
+        <tbody>
+          <tr class="subject">
+            <td class="shop">池田生花店 本店</td>
+            <td class="url"><a href="https://www.ikeda-hanaya.com/">ikeda-hanaya.com</a><br><a href="https://ikeda.hanatown.net/">ikeda.hanatown.net</a></td>
+            <td class="addr">沖代町1丁目5-38</td>
+            <td class="num">3.36 ／ 1件</td>
+            <td class="desc">花束・アレンジ・プリザーブド・胡蝶蘭・塊根植物。花き日持ち品質管理認証取得。日祝営業／駐車場／カード・QR・電子マネー可</td>
+          </tr>
+          <tr class="subject">
+            <td class="shop">池田生花店 中津駅店</td>
+            <td class="url">同上</td>
+            <td class="addr">島田219-2</td>
+            <td class="num">3.21 ／ 1件</td>
+            <td class="desc">中津駅徒歩1分。日祝営業／駐車場</td>
+          </tr>
+          <tr>
+            <td class="shop">花かんばる</td>
+            <td class="desc">公式サイト確認できず</td>
+            <td class="addr">京町1529-1</td>
+            <td class="num">3.85 ／ 9件 <span class="chip best">市内最多</span></td>
+            <td class="desc">配達対応、日祝営業、駐車場、カード可</td>
+          </tr>
+          <tr>
+            <td class="shop">フラワーショップいしばし</td>
+            <td class="url"><a href="https://fs-ishibashi.hanatown.net/">fs-ishibashi.hanatown.net</a><br><a href="https://www.eflora.co.jp/shop/fs-ishibashi/">eflora.co.jp</a></td>
+            <td class="addr">下池永535 ほか</td>
+            <td class="num">3.38 ／ 3件</td>
+            <td class="desc">ブライダル装花中心、冠婚葬祭・各種ギフト</td>
+          </tr>
+          <tr>
+            <td class="shop">フラワー&amp;ギフト 花結び</td>
+            <td class="url"><a href="https://hanamusubi-flower.com/">hanamusubi-flower.com</a></td>
+            <td class="addr">一ツ松255-10</td>
+            <td class="num">3.41 ／ 1件</td>
+            <td class="desc">プリザーブド・ソラフラワー・生花。9:00〜18:00／水日休</td>
+          </tr>
+          <tr>
+            <td class="shop">Nola Coniglietto</td>
+            <td class="url"><a href="http://www.nola-coniglietto.com/">nola-coniglietto.com</a></td>
+            <td class="addr">下池永535</td>
+            <td class="num">3.47 ／ 2件</td>
+            <td class="desc">造花・プリザーブド中心、会場装花・レッスン</td>
+          </tr>
+          <tr>
+            <td class="shop">ガーデン・ナチュール</td>
+            <td class="desc">確認できず</td>
+            <td class="addr">島田219-2</td>
+            <td class="num dash">—</td>
+            <td class="desc">中津駅徒歩1分</td>
+          </tr>
+          <tr>
+            <td class="shop">花の園田</td><td class="desc">確認できず</td><td class="addr">大悟法411</td><td class="num dash">—</td><td class="desc">—</td>
+          </tr>
+          <tr>
+            <td class="shop">こもれび</td><td class="desc">確認できず</td><td class="addr">犬丸1697</td><td class="num">3.16 ／ 1件</td><td class="desc">—</td>
+          </tr>
+          <tr>
+            <td class="shop">フォーリーフ</td><td class="desc">確認できず</td><td class="addr">三光下秣1236</td><td class="num">3.18 ／ 1件</td><td class="desc">—</td>
+          </tr>
+          <tr>
+            <td class="shop">グリーンショップあいびー</td><td class="desc">確認できず</td><td class="addr">大貞298-1</td><td class="num dash">—</td><td class="desc">—</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="note note--subject"><strong>要確認：</strong>「ガーデン・ナチュール」の住所（島田219-2）が<strong>池田生花店 中津駅店と一致</strong>しています。旧屋号のリスティング残存であればGoogleビジネスプロフィールの重複であり、中津駅店の評価を分散させている恐れがあります。実地確認を推奨します。</div>
+  </section>
+
+  <!-- ============ 2 ============ -->
+  <section>
+    <div class="sec-head">
+      <span class="sec-num">SECTION 02</span>
+      <h2 class="sec-title">通常のWeb検索結果（自然検索）</h2>
+    </div>
+    <p class="excl"><b>除外対象</b>
+      <span>エキテン</span><span>NAVITIME</span><span>MapFan</span><span>Yahoo!マップ</span><span>iタウンページ</span><span>ボタニーク</span><span>zimosh.com</span><span>東京寿園</span>
+    </p>
+
+    <h3>キーワード「中津市 花屋」</h3>
+    <div class="tw">
+      <table style="min-width:760px">
+        <thead><tr><th>順位</th><th>店舗名</th><th>URL</th><th>主な説明</th></tr></thead>
+        <tbody>
+          <tr class="subject"><td class="rank">1</td><td class="shop">池田生花店（公式Instagram）</td><td class="url"><a href="https://www.instagram.com/ikedaseikaten_nakatsucity/">instagram.com/ikedaseikaten_nakatsucity</a></td><td class="desc">池田生花店 中津市</td></tr>
+          <tr class="subject"><td class="rank">2</td><td class="shop">池田生花店（花キューピット）</td><td class="url"><a href="https://ikeda.hanatown.net/">ikeda.hanatown.net</a></td><td class="desc">大分県中津市の花屋 池田生花店にフラワーギフトはお任せください</td></tr>
+          <tr><td class="rank">3</td><td class="shop">フラワーショップいしばし</td><td class="url"><a href="https://fs-ishibashi.hanatown.net/">fs-ishibashi.hanatown.net</a></td><td class="desc">花キューピット加盟店</td></tr>
+          <tr><td class="rank">4</td><td class="shop">花結び</td><td class="url"><a href="https://hanamusubi-flower.com/">hanamusubi-flower.com</a></td><td class="desc">フラワー&amp;ギフト 花結び</td></tr>
+          <tr class="subject"><td class="rank">5</td><td class="shop">池田生花店（自社公式）</td><td class="url"><a href="https://www.ikeda-hanaya.com/">ikeda-hanaya.com</a></td><td class="desc">花・フラワーギフトの通販サイト</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>キーワード「中津市 花束」</h3>
+    <div class="tw">
+      <table style="min-width:700px">
+        <thead><tr><th>順位</th><th>店舗名</th><th>URL</th></tr></thead>
+        <tbody>
+          <tr><td class="rank">1</td><td class="shop">いしばし ゆめマート店</td><td class="url"><a href="https://www.eflora.co.jp/shop/fs-ishibashi/original/">eflora.co.jp/shop/fs-ishibashi/original/</a></td></tr>
+          <tr class="subject"><td class="rank">2</td><td class="shop">池田生花店（公式Instagram）</td><td class="url"><a href="https://www.instagram.com/ikedaseikaten_nakatsucity/">instagram.com/ikedaseikaten_nakatsucity</a></td></tr>
+          <tr class="subject"><td class="rank">3</td><td class="shop">池田生花店（花キューピット）</td><td class="url"><a href="https://ikeda.hanatown.net/">ikeda.hanatown.net</a></td></tr>
+          <tr><td class="rank">4</td><td class="shop">フラワーショップいしばし</td><td class="url"><a href="https://fs-ishibashi.hanatown.net/">fs-ishibashi.hanatown.net</a></td></tr>
+          <tr><td class="rank">5</td><td class="shop">花結び</td><td class="url"><a href="https://hanamusubi-flower.com/">hanamusubi-flower.com</a></td></tr>
+          <tr class="subject"><td class="rank">6</td><td class="shop">池田生花店（自社公式）</td><td class="url"><a href="https://www.ikeda-hanaya.com/">ikeda-hanaya.com</a></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>キーワード「中津市 花屋 おすすめ」</h3>
+    <div class="tw">
+      <table style="min-width:700px">
+        <thead><tr><th>順位</th><th>店舗名</th><th>URL</th></tr></thead>
+        <tbody>
+          <tr class="subject"><td class="rank">1</td><td class="shop">池田生花店（公式Instagram）</td><td class="url"><a href="https://www.instagram.com/ikedaseikaten_nakatsucity/">instagram.com/ikedaseikaten_nakatsucity</a></td></tr>
+          <tr><td class="rank">2</td><td class="shop">フラワーショップいしばし</td><td class="url"><a href="https://fs-ishibashi.hanatown.net/">fs-ishibashi.hanatown.net</a></td></tr>
+          <tr><td class="rank">3</td><td class="shop">花結び</td><td class="url"><a href="https://hanamusubi-flower.com/">hanamusubi-flower.com</a></td></tr>
+          <tr class="subject"><td class="rank">4</td><td class="shop">池田生花店（自社公式）</td><td class="url"><a href="https://www.ikeda-hanaya.com/">ikeda-hanaya.com</a></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="note">このキーワードでのみ<strong>花キューピットページが圏外</strong>です。上位は東京寿園・zimosh・エキテンといったまとめ記事が占有しており、<strong>そこに池田生花店が載っていないこと</strong>が順位低下の直接要因です。</div>
+  </section>
+
+  <!-- ============ 3 ============ -->
+  <section>
+    <div class="sec-head">
+      <span class="sec-num">SECTION 03</span>
+      <h2 class="sec-title">3キーワード横断比較</h2>
+    </div>
+    <p class="sub">広告・ポータル・まとめサイトを除外し、公式サイト／公式店舗情報のみで再採番した順位。<span class="dash">−</span> は圏外。</p>
+    <div class="tw">
+      <table style="min-width:600px">
+        <thead><tr><th>店舗／掲載面</th><th style="text-align:center">花屋</th><th style="text-align:center">花束</th><th style="text-align:center">花屋 おすすめ</th></tr></thead>
+        <tbody>
+          <tr class="subject"><td class="shop">池田生花店 Instagram <span class="chip own">自社</span></td><td class="rank">1</td><td class="rank">2</td><td class="rank">1</td></tr>
+          <tr class="subject"><td class="shop">池田生花店 花キューピット <span class="chip own">自社</span></td><td class="rank">2</td><td class="rank">3</td><td class="rank out">−</td></tr>
+          <tr class="subject"><td class="shop">池田生花店 自社公式サイト <span class="chip own">自社</span></td><td class="rank">5</td><td class="rank">6</td><td class="rank">4</td></tr>
+          <tr><td class="shop">いしばし（花キューピット）</td><td class="rank">3</td><td class="rank">4</td><td class="rank">2</td></tr>
+          <tr><td class="shop">いしばし（イーフローラ）</td><td class="rank out">−</td><td class="rank">1</td><td class="rank out">−</td></tr>
+          <tr><td class="shop">花結び</td><td class="rank">4</td><td class="rank">5</td><td class="rank">3</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="note"><strong>読み取れること：</strong>池田生花店は3キーワードすべてで露出し、市内トップの露出量を持っています。しかし露出しているのは<strong>Instagramと花キューピットの間借りページ</strong>で、<strong>自社ドメインは毎回最下位</strong>。一方いしばしは花キューピット＋イーフローラの2プラットフォームに足場を持ち、「花束」で1位を獲得しています。</div>
+  </section>
+
+  <!-- ============ 4 ============ -->
+  <section>
+    <div class="sec-head">
+      <span class="sec-num">SECTION 04</span>
+      <h2 class="sec-title">池田生花店のSEO分析</h2>
+    </div>
+    <p class="sub">露出量・コンテンツ品質・商品幅はいずれも市内トップ。それでも自社ドメインが毎回最下位という、<strong>資産が自社に貯まっていない</strong>状態です。</p>
+    <div class="tw">
+      <table style="min-width:820px">
+        <thead><tr><th style="width:120px">観点</th><th>池田生花店の現状</th><th>競合との差・評価</th></tr></thead>
+        <tbody>
+          <tr>
+            <td class="act">① 公式サイト<br><span class="chip best">最大の弱点</span></td>
+            <td class="desc"><code class="num">ikeda-hanaya.com</code> は海外IPから <strong>403 Forbidden</strong>（XSERVER）。<code class="num">site:</code> 検索でもインデックス済みページが<strong>1件も確認できず</strong>。</td>
+            <td class="desc">海外IP限定の遮断なら実害は小さいが、Googlebotが弾かれている／noindex残存／サイトマップ未送信であれば、<strong>何を書いても順位は上がらない</strong>。</td>
+          </tr>
+          <tr>
+            <td class="act">② 眠っている資産</td>
+            <td class="desc">還暦祝い・開店祝い・敬老の日・仏花など<strong>品質の高い記事が5本</strong>。価格表＋FAQ＋NAP署名というローカルSEOの理想形。</td>
+            <td class="desc">ところが<strong>検索結果に一切出現しない</strong>（＝未公開または未インデックス）。競合はこの領域にコンテンツを持っておらず、無風地帯。</td>
+          </tr>
+          <tr>
+            <td class="act">③ GBP</td>
+            <td class="desc">営業時間が花キューピット「9:00〜18:00」vs ブログ署名「9時〜18時30分」で<strong>不一致</strong>。住所も「沖代町1-5-38」／「1丁目5-38」の表記ゆれ。</td>
+            <td class="desc">ローカル検索では一貫性が信頼シグナル。この不一致は直接の減点要因。</td>
+          </tr>
+          <tr>
+            <td class="act">④ 口コミ</td>
+            <td class="desc">本店 3.36／1件、中津駅店 3.21／1件（エキテン）。</td>
+            <td class="desc">市内全店が<strong>1〜9件という極薄市場</strong>。30件集めるだけで単独首位に立てる。</td>
+          </tr>
+          <tr>
+            <td class="act">⑤ 情報量</td>
+            <td class="desc">用途別解説・価格帯の提示・商品幅（胡蝶蘭・塊根植物まで）で明確に勝っている。</td>
+            <td class="desc">負けているのは<strong>公開・インデックス・導線</strong>であり、記事の追加執筆は最優先ではない。</td>
+          </tr>
+          <tr>
+            <td class="act">⑥ 更新頻度</td>
+            <td class="desc">更新はInstagramに集中し、<strong>自社ドメインには蓄積されていない</strong>。</td>
+            <td class="desc">花結びは「お知らせ」を2026/07/09に更新し、更新をサイト上で可視化している。</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ============ 5 ============ -->
+  <section>
+    <div class="sec-head">
+      <span class="sec-num">SECTION 05</span>
+      <h2 class="sec-title">改善策（優先順位順）</h2>
+    </div>
+    <div class="tw">
+      <table style="min-width:880px">
+        <thead><tr><th>優先</th><th style="width:180px">施策</th><th>具体的にやること</th><th style="width:170px">効果・所要</th></tr></thead>
+        <tbody>
+          <tr class="p0">
+            <td class="pri">P0</td>
+            <td class="act">Search Console登録 → インデックス状況の確認・修復</td>
+            <td class="desc">robots.txt／noindex残存の点検、XSERVERの国外IP制限・WAF設定の確認、sitemap.xml の生成と送信、URL検査でインデックス登録をリクエスト。</td>
+            <td class="desc"><strong>ここが詰まっていれば他の施策のリターンはゼロ。</strong>所要1〜2時間。</td>
+          </tr>
+          <tr class="p0">
+            <td class="pri">P0</td>
+            <td class="act">既存記事5本を自社ドメイン配下に公開</td>
+            <td class="desc">1記事1URLで公開。<code class="num">Article</code>／<code class="num">FAQPage</code>／<code class="num">LocalBusiness</code> 構造化データを付与し、該当商品ページへ内部リンク。</td>
+            <td class="desc">「中津市 還暦 花束」等のロングテールで即座に露出。所要1日。</td>
+          </tr>
+          <tr class="p1">
+            <td class="pri">P1</td>
+            <td class="act">GBP 2拠点の作り込み</td>
+            <td class="desc"><ul class="tight"><li>主カテゴリ「生花店」に統一</li><li>営業時間を <strong>9:00〜18:30</strong> で全媒体統一</li><li>商品を価格帯付きで登録</li><li>写真 週2枚／投稿 週1回</li><li>Q&amp;Aを自問自答で10件</li><li>ガーデン・ナチュール重複の実地確認</li></ul></td>
+            <td class="desc">マップ枠の順位に直結。競合の作り込みが浅く差がつきやすい。3か月。</td>
+          </tr>
+          <tr class="p1">
+            <td class="pri">P1</td>
+            <td class="act">Google口コミの獲得</td>
+            <td class="desc">レジ横QRカード＋配達後のSMS／LINE。全件24時間以内に返信。目標は6か月で<strong>本店30件・中津駅店15件</strong>。※対価提供はポリシー違反のため不可。</td>
+            <td class="desc">費用ゼロで効果最大。単独首位への最短ルート。</td>
+          </tr>
+          <tr class="p1">
+            <td class="pri">P1</td>
+            <td class="act">NAP＋営業時間を全媒体で統一</td>
+            <td class="desc">エキテン／NAVITIME／MapFan／iタウンページ／Yahoo!マップ／花キューピット／Instagram の店名・住所・電話・営業時間・定休日を揃える。</td>
+            <td class="desc">地味だがローカル検索の信頼シグナル。</td>
+          </tr>
+          <tr class="p2">
+            <td class="pri">P2</td>
+            <td class="act">用途別ランディングページの新設</td>
+            <td class="desc">花束／仏花・供花／開店祝いスタンド花／胡蝶蘭 の4本。各ページに価格表・配達料・納品フロー・実物写真・電話CTA・FAQ。</td>
+            <td class="desc">「中津市 花束」で現1位を上回る余地が大きい。6か月。</td>
+          </tr>
+          <tr class="p2">
+            <td class="pri">P2</td>
+            <td class="act">「おすすめ」クエリ対策</td>
+            <td class="desc">zimosh への取材・掲載打診。エキテン店舗ページの説明文・メニュー・クーポンを最適化。</td>
+            <td class="desc">自社サイト単独では勝ちにくく、第三者掲載が最短。</td>
+          </tr>
+          <tr class="p2">
+            <td class="pri">P2</td>
+            <td class="act">Instagram → 公式サイトの導線</td>
+            <td class="desc">プロフィールリンクを公式サイトに設定。投稿キャプションとストーリーズから記事へ誘導。</td>
+            <td class="desc">1位を取れている露出を自社ドメインの流入に変換する。</td>
+          </tr>
+          <tr class="p2">
+            <td class="pri">P2</td>
+            <td class="act">記事を月2本追加</td>
+            <td class="desc">お彼岸／七五三／母の日／正月花／新築祝い／お見舞いのマナー。公開日・更新日を明示。</td>
+            <td class="desc">クロール頻度の向上と季節需要の先取り。</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="note note--subject"><strong>まず P0 から着手してください。</strong>サイトがGoogleに正しく読まれているかを確認し、すでに書き上がっている5本の記事を自社ドメインで公開し、口コミを30件集める。この3つだけで自社サイトの順位とマップ枠は大きく改善します。逆に1つ目が詰まっていると、2つ目も3つ目も効きません。</div>
+  </section>
+
+  <footer>
+    <p style="margin:0 0 12px;font-weight:700;color:var(--ink-2);font-size:11px;letter-spacing:.1em">参照ソース</p>
+    <div class="sources">
+      <a href="https://www.ekiten.jp/g0306/a44203/">エキテン 中津市の花屋</a>
+      <a href="https://www.hanacupid.or.jp/stores/details/95007">花キューピット 店舗詳細</a>
+      <a href="https://ikeda.hanatown.net/">ikeda.hanatown.net</a>
+      <a href="https://www.ikeda-hanaya.com/">ikeda-hanaya.com</a>
+      <a href="https://www.instagram.com/ikedaseikaten_nakatsucity/">池田生花店 Instagram</a>
+      <a href="https://fs-ishibashi.hanatown.net/">fs-ishibashi.hanatown.net</a>
+      <a href="https://www.eflora.co.jp/shop/fs-ishibashi/">イーフローラ いしばし</a>
+      <a href="https://hanamusubi-flower.com/">花結び</a>
+      <a href="http://www.nola-coniglietto.com/">Nola Coniglietto</a>
+      <a href="https://www.navitime.co.jp/category/0206007/44203/">NAVITIME</a>
+      <a href="https://mapfan.com/genres/441/44/203">MapFan</a>
+      <a href="https://botanique.jp/shop/local/pr-oita/m0904">ボタニーク</a>
+      <a href="https://tokyo-kotobukien.jp/blogs/magazine/51719">東京寿園</a>
+      <a href="https://zimosh.com/newopen20210525/">zimosh</a>
+    </div>
+  </footer>
+
+</div>
