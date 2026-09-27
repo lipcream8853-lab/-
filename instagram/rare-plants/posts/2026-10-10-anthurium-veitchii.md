@@ -5,8 +5,8 @@
 2枚（葉のアップを1枚目に）
 
 画像ファイル（この順で投稿）：
-1. `images/anthurium-veitchii-1.jpg`（葉のアップ）
-2. `images/anthurium-veitchii-2.jpg`（株の全体）
+1. `images/post/anthurium-veitchii-1.jpg`（葉のアップ）
+2. `images/post/anthurium-veitchii-2.jpg`（株の全体）
 
 ## 代替テキスト
 

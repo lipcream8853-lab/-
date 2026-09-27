@@ -5,9 +5,9 @@
 3枚（1枚目＝マーブル、2枚目＝ミントホワイト、3枚目＝スプラッシュ）
 
 画像ファイル（この順で投稿）：
-1. `images/white-monster-1.jpg`（マーブル）
-2. `images/white-monster-2.jpg`（ミントホワイト）
-3. `images/white-monster-3.jpg`（スプラッシュ）
+1. `images/post/white-monster-1.jpg`（マーブル）
+2. `images/post/white-monster-2.jpg`（ミントホワイト）
+3. `images/post/white-monster-3.jpg`（スプラッシュ）
 
 ## 代替テキスト
 
