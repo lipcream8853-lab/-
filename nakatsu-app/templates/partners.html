@@ -1,0 +1,21 @@
+{% extends "base.html" %}{% block title %}取引先{% endblock %}
+{% block body %}
+<h1>取引先マスタ</h1>
+<form method="post" class="grid">
+  <input type="hidden" name="id" value="{{ edit.id if edit }}">
+  <label>コード<input name="code" required value="{{ edit.code if edit }}"></label>
+  <label>名称<input name="name" required value="{{ edit.name if edit }}"></label>
+  <label>カナ<input name="kana" value="{{ edit.kana if edit }}"></label>
+  <label>郵便番号<input name="zip" value="{{ edit.zip if edit }}"></label>
+  <label>住所<input name="address" value="{{ edit.address if edit }}"></label>
+  <label>電話<input name="tel" value="{{ edit.tel if edit }}"></label>
+  <label>締め日(0=月末)<input type="number" name="closing_day" min="0" max="28" value="{{ edit.closing_day if edit else 0 }}"></label>
+  <label>備考<input name="note" value="{{ edit.note if edit }}"></label>
+  <button>{{ '更新' if edit else '追加' }}</button>
+</form>
+<table><tr><th>コード<th>名称<th>住所<th>電話<th>締め日<th></tr>
+{% for r in rows %}<tr><td>{{ r.code }}<td>{{ r.name }}<td>{{ r.address }}<td>{{ r.tel }}<td>{{ '月末' if r.closing_day==0 else r.closing_day~'日' }}
+<td><a href="?edit={{ r.id }}">編集</a>
+<form method="post" action="{{ url_for('partner_delete', pid=r.id) }}" style="display:inline" onsubmit="return confirm('無効にしますか？')"><button class="link">削除</button></form></tr>{% endfor %}
+</table>
+{% endblock %}

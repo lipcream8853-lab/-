@@ -1,0 +1,12 @@
+{% extends "base.html" %}{% block title %}請求書{% endblock %}
+{% block body %}
+<h1>請求書(締め処理)</h1>
+<form method="post" class="grid">
+  <label>対象年<input type="number" name="year" value="{{ year }}"></label>
+  <label>対象月<input type="number" name="month" min="1" max="12" value="{{ month }}"></label>
+  <label>発行日<input type="date" name="issue_date" value="{{ today }}"></label>
+  <button class="primary" onclick="return confirm('未請求の伝票を締めて請求書を作成します。よろしいですか？')">締め処理を実行</button>
+</form>
+<table><tr><th>No<th>取引先<th>期間<th>前回残高<th>入金<th>請求額<th></tr>
+{% for r in rows %}<tr><td>{{ r.invoice_no }}<td>{{ r.pname }}<td>{{ r.period_from }}〜{{ r.period_to }}<td class="num">{{ r.prev_balance|yen }}<td class="num">{{ r.payment|yen }}<td class="num">{{ r.total|yen }}<td><a href="{{ url_for('invoice_view', iid=r.id) }}">表示/印刷</a></tr>{% endfor %}</table>
+{% endblock %}

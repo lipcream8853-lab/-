@@ -1,0 +1,39 @@
+{% extends "base.html" %}{% block title %}伝票入力{% endblock %}
+{% block body %}
+<h1>買い上げ伝票 {{ '修正 No.'~slip.slip_no if slip else '入力' }}</h1>
+<form method="post" id="f">
+<div class="grid">
+  <label>日付<input type="date" name="slip_date" required value="{{ slip.slip_date if slip else today }}"></label>
+  <label>取引先<select name="partner_id" required>
+    {% for p in partners %}<option value="{{ p.id }}" {{ 'selected' if slip and slip.partner_id==p.id }}>{{ p.code }} {{ p.name }}</option>{% endfor %}</select></label>
+  <label>備考<input name="note" value="{{ slip.note if slip }}"></label>
+</div>
+<table id="lines"><tr><th>品目<th>品名<th>数量<th>単位<th>単価<th>税率<th>金額</tr>
+{% for l in (lines or [none,none,none,none,none]) %}
+<tr>
+ <td><select name="item_id" onchange="pick(this)"><option value="">--</option>
+   {% for i in items %}<option value="{{ i.id }}" data-name="{{ i.name }}" data-unit="{{ i.unit }}" data-price="{{ i.default_price }}" data-tax="{{ i.tax_rate }}" {{ 'selected' if l and l.item_id==i.id }}>{{ i.code }} {{ i.name }}</option>{% endfor %}</select>
+ <td><input name="item_name" value="{{ l.item_name if l }}">
+ <td><input type="number" name="qty" min="1" class="s" value="{{ l.qty if l }}" oninput="calc()">
+ <td><input name="unit" class="s" value="{{ l.unit if l }}">
+ <td><input type="number" name="unit_price" min="0" class="m" value="{{ l.unit_price if l }}" oninput="calc()">
+ <td><select name="tax_rate"><option value="8" {{ 'selected' if l and l.tax_rate==8 }}>8%</option><option value="10" {{ 'selected' if l and l.tax_rate==10 }}>10%</option></select>
+ <td class="num amt">
+</tr>{% endfor %}
+</table>
+<p><button type="button" onclick="addRow()">行を追加</button> 　合計(税抜): <b id="sum">0</b> 円</p>
+<button class="primary">保存</button>
+</form>
+<script>
+function pick(s){const o=s.selectedOptions[0],r=s.closest('tr');if(!o.value)return;
+ r.querySelector('[name=item_name]').value=o.dataset.name;r.querySelector('[name=unit]').value=o.dataset.unit;
+ r.querySelector('[name=unit_price]').value=o.dataset.price;r.querySelector('[name=tax_rate]').value=o.dataset.tax;
+ r.querySelector('[name=qty]').focus();calc();}
+function calc(){let t=0;document.querySelectorAll('#lines tr').forEach((r,i)=>{if(!i)return;
+ const a=(+r.querySelector('[name=qty]').value||0)*(+r.querySelector('[name=unit_price]').value||0);
+ r.querySelector('.amt').textContent=a?a.toLocaleString():'';t+=a;});document.getElementById('sum').textContent=t.toLocaleString();}
+function addRow(){const t=document.getElementById('lines'),r=t.rows[t.rows.length-1].cloneNode(true);
+ r.querySelectorAll('input').forEach(i=>i.value='');r.querySelector('select').value='';t.appendChild(r);}
+calc();
+</script>
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends "base.html" %}{% block title %}請求書 {{ inv.invoice_no }}{% endblock %}
+{% block body %}
+<div class="noprint">
+  <button onclick="window.print()">印刷</button>
+  <form method="post" class="grid" style="display:inline-grid"><label>今回入金額<input type="number" name="payment" value="{{ inv.payment }}"></label><button>入金を反映</button></form>
+  <form method="post" action="{{ url_for('invoice_cancel', iid=inv.id) }}" style="display:inline" onsubmit="return confirm('取り消して伝票を未請求に戻します。よろしいですか？')"><button class="link">取り消し</button></form>
+</div>
+<section class="paper">
+<h1 class="center">請　求　書</h1>
+<p class="right">請求書No. {{ inv.invoice_no }}<br>発行日 {{ inv.issue_date }}<br>対象期間 {{ inv.period_from }}〜{{ inv.period_to }}</p>
+<p class="big">〒{{ inv.pzip }} {{ inv.paddr }}<br>{{ inv.pname }} 御中</p>
+<p>下記のとおりご請求申し上げます。</p>
+<table class="sum">
+<tr><td>前回請求額<td class="num">{{ inv.prev_balance|yen }}<td>ご入金額<td class="num">{{ inv.payment|yen }}</tr>
+<tr><td>8%対象(税抜)<td class="num">{{ inv.subtotal8|yen }}<td>消費税(8%)<td class="num">{{ inv.tax8|yen }}</tr>
+<tr><td>10%対象(税抜)<td class="num">{{ inv.subtotal10|yen }}<td>消費税(10%)<td class="num">{{ inv.tax10|yen }}</tr>
+<tr><th>今回ご請求額<th class="num" colspan="3">{{ inv.total|yen }} 円</tr></table>
+<h3>明細</h3>
+<table><tr><th>日付<th>伝票No<th>品名<th>数量<th>単価<th>金額<th>税率</tr>
+{% for l in detail %}<tr><td>{{ l.slip_date }}<td>{{ l.slip_no }}<td>{{ l.item_name }}<td class="num">{{ l.qty }}{{ l.unit }}<td class="num">{{ l.unit_price|yen }}<td class="num">{{ (l.qty*l.unit_price)|yen }}<td>{{ l.tax_rate }}%</tr>{% endfor %}</table>
+<p class="right">{{ co.company_name }}<br>{{ co.company_address }} {{ co.company_tel }}<br>{{ co.registration_no }}</p>
+</section>
+{% endblock %}

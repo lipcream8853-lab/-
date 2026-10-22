@@ -1,0 +1,10 @@
+{% extends "base.html" %}{% block title %}集計{% endblock %}
+{% block body %}
+<h1>集計・帳票</h1>
+<form class="grid"><label>対象月<input type="month" name="ym" value="{{ ym }}"></label><button>表示</button>
+<a href="{{ url_for('export_csv', ym=ym) }}">CSV出力(Excel可)</a></form>
+<p>月合計(税抜): <b>{{ total|yen }}</b> 円</p>
+<h3>日別</h3><table><tr><th>日付<th>伝票数<th>金額</tr>{% for r in by_day %}<tr><td>{{ r.d }}<td class="num">{{ r.n }}<td class="num">{{ r.amount|yen }}</tr>{% endfor %}</table>
+<h3>取引先別</h3><table><tr><th>取引先<th>金額</tr>{% for r in by_partner %}<tr><td>{{ r.name }}<td class="num">{{ r.amount|yen }}</tr>{% endfor %}</table>
+<h3>品目別</h3><table><tr><th>品名<th>数量<th>金額</tr>{% for r in by_item %}<tr><td>{{ r.name }}<td class="num">{{ r.qty }}<td class="num">{{ r.amount|yen }}</tr>{% endfor %}</table>
+{% endblock %}

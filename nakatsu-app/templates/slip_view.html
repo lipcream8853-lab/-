@@ -1,0 +1,21 @@
+{% extends "base.html" %}{% block title %}伝票 {{ slip.slip_no }}{% endblock %}
+{% block body %}
+<div class="noprint">
+  <button onclick="window.print()">印刷</button>
+  {% if not slip.invoice_id %}<a href="{{ url_for('slip_edit', sid=slip.id) }}">修正</a>
+  <form method="post" action="{{ url_for('slip_delete', sid=slip.id) }}" style="display:inline" onsubmit="return confirm('削除しますか？')"><button class="link">削除</button></form>{% endif %}
+</div>
+<section class="paper">
+<h1 class="center">買 上 伝 票</h1>
+<p class="right">No. {{ slip.slip_no }}　日付 {{ slip.slip_date }}</p>
+<p class="big">{{ slip.pname }} 様</p>
+<table><tr><th>品名<th>数量<th>単位<th>単価<th>金額<th>税率</tr>
+{% for l in lines %}<tr><td>{{ l.item_name }}<td class="num">{{ l.qty }}<td>{{ l.unit }}<td class="num">{{ l.unit_price|yen }}<td class="num">{{ (l.qty*l.unit_price)|yen }}<td>{{ l.tax_rate }}%</tr>{% endfor %}</table>
+<table class="sum">
+<tr><td>8%対象<td class="num">{{ sub[8]|yen }}<td>消費税<td class="num">{{ tax[8]|yen }}</tr>
+<tr><td>10%対象<td class="num">{{ sub[10]|yen }}<td>消費税<td class="num">{{ tax[10]|yen }}</tr>
+<tr><th>合計<th class="num" colspan="3">{{ total|yen }} 円</tr></table>
+{% if slip.note %}<p>備考: {{ slip.note }}</p>{% endif %}
+<p class="right">{{ co.company_name }}<br>{{ co.company_address }} {{ co.company_tel }}<br>{{ co.registration_no }}</p>
+</section>
+{% endblock %}

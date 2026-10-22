@@ -1,0 +1,9 @@
+{% extends "base.html" %}{% block title %}ホーム{% endblock %}
+{% block body %}
+<h1>ホーム</h1>
+<div class="cards">
+  <a class="card" href="{{ url_for('slip_edit') }}"><big>伝票を入力</big>本日 {{ n_today }} 件</a>
+  <a class="card" href="{{ url_for('invoices') }}"><big>請求書を作成</big>未請求の伝票 {{ n_unbilled }} 件</a>
+  <a class="card" href="{{ url_for('reports') }}"><big>集計・CSV出力</big>日別/取引先別/品目別</a>
+</div>
+{% endblock %}

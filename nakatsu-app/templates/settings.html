@@ -1,0 +1,12 @@
+{% extends "base.html" %}{% block title %}設定{% endblock %}
+{% block body %}
+<h1>設定</h1>
+<form method="post" class="grid">
+ <label>会社名<input name="company_name" value="{{ co.company_name }}"></label>
+ <label>住所<input name="company_address" value="{{ co.company_address }}"></label>
+ <label>電話<input name="company_tel" value="{{ co.company_tel }}"></label>
+ <label>適格請求書発行事業者番号(T+13桁)<input name="registration_no" value="{{ co.registration_no }}"></label>
+ <button class="primary">保存</button></form>
+<h2>バックアップ</h2>
+<form method="post" action="{{ url_for('backup') }}"><button>今すぐバックアップ</button></form>
+{% endblock %}

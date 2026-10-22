@@ -1,0 +1,8 @@
+{% extends "base.html" %}{% block title %}伝票一覧{% endblock %}
+{% block body %}
+<h1>伝票一覧</h1>
+<form class="grid"><label>期間<input type="date" name="from" value="{{ start }}"></label><label>〜<input type="date" name="to" value="{{ end }}"></label><button>表示</button></form>
+<table><tr><th>No<th>日付<th>取引先<th>金額(税抜)<th>状態<th></tr>
+{% for r in rows %}<tr><td>{{ r.slip_no }}<td>{{ r.slip_date }}<td>{{ r.pname }}<td class="num">{{ r.amount|yen }}<td>{{ '請求済' if r.invoice_id else '未請求' }}<td><a href="{{ url_for('slip_view', sid=r.id) }}">表示/印刷</a></tr>{% endfor %}
+</table>
+{% endblock %}
